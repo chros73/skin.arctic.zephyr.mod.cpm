@@ -1878,6 +1878,17 @@
             <onclick>ActivateWindow(playerprocessinfo)</onclick>
             <onclick>SetFocus(9000)</onclick>
         </control>
+		<control type="button" id="998">
+            <description>PlayerDebug</description>
+            <width>48</width>
+            <height>48</height>
+            <label/>
+            <font />
+            <include>DefOSDUpDown</include>
+            <texturefocus colordiffuse="$VAR[ColorHighlight]" flipx="true">osd/tempo.png</texturefocus>
+            <texturenofocus colordiffuse="Dark1" flipx="true">osd/tempo.png</texturenofocus>
+            <onclick>PlayerDebug</onclick>
+        </control>
         <control type="button" id="24">
             <description>Settings</description>
             <width>48</width>
@@ -2058,6 +2069,17 @@
             <onclick>ActivateWindow(playerprocessinfo)</onclick>
             <onclick>SetFocus(9000)</onclick>
         </control>
+		<control type="button" id="998">
+            <description>PlayerDebug</description>
+            <width>48</width>
+            <height>48</height>
+            <label/>
+            <font />
+            <include>DefOSDUpDown</include>
+            <texturefocus colordiffuse="$VAR[ColorHighlight]" flipx="true">osd/tempo.png</texturefocus>
+            <texturenofocus colordiffuse="Dark1" flipx="true">osd/tempo.png</texturenofocus>
+            <onclick>PlayerDebug</onclick>
+        </control>
         <control type="button" id="19">
             <description>Settings</description>
             <width>48</width>
@@ -2236,6 +2258,17 @@
             <texturenofocus colordiffuse="Dark1" flipx="true">osd/info.png</texturenofocus>
             <onclick>ActivateWindow(playerprocessinfo)</onclick>
             <onclick>SetFocus(9000)</onclick>
+        </control>
+		<control type="button" id="998">
+            <description>PlayerDebug</description>
+            <width>48</width>
+            <height>48</height>
+            <label/>
+            <font />
+            <include>DefOSDUpDown</include>
+            <texturefocus colordiffuse="$VAR[ColorHighlight]" flipx="true">osd/tempo.png</texturefocus>
+            <texturenofocus colordiffuse="Dark1" flipx="true">osd/tempo.png</texturenofocus>
+            <onclick>PlayerDebug</onclick>
         </control>
         <control type="button" id="19">
             <description>Settings</description>

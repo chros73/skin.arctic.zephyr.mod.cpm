@@ -162,7 +162,7 @@
                         <textcolor>PanelWhite70</textcolor>
 					</control>
 					<control type="label">
-						<label>[COLOR Selected]$LOCALIZE[32001]:[/COLOR] $INFO[Player.Process(amlogic.eoft_gamut)], $INFO[Player.Process(amlogic.displaymode)], $INFO[Player.Process(amlogic.pixformat)]</label>
+						<label>[COLOR Selected]$LOCALIZE[32001]:[/COLOR] $INFO[Player.Process(amlogic.eoft_gamut)], $INFO[Player.Process(amlogic.displaymode)], $INFO[Player.Process(amlogic.pixformat)], $INFO[Player.Process(amlogic.video.fps.info)] fps</label>
 						<font>Small333</font>
                         <textcolor>PanelWhite70</textcolor>
 					</control>
