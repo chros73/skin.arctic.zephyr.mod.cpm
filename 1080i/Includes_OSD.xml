@@ -1514,7 +1514,7 @@
     </variable>
 
     <variable name="OSDPanelWhite70">
-        <value condition="Skin.HasSetting(osd.usethemeNewOSD)">PanelWhite100</value>
+        <value condition="Skin.HasSetting(osd.usethemeNewOSD)">PanelWhite90</value>
         <value>Dark1</value>
     </variable>
 
@@ -2627,7 +2627,7 @@
         <!-- New OSD -->
         <control type="group">
             <height>74</height>
-            <bottom>110</bottom>
+            <bottom>0</bottom>
             <animation type="WindowOpen">
                 <effect type="fade" start="0" end="100" time="150" delay="150"/>
             </animation>
@@ -2918,6 +2918,7 @@
             
             <!-- Background bottom -->
             <control type="group">
+                <visible>Player.Seeking | Player.HasPerformedSeek(3) | [Player.Paused + !Skin.HasSetting(HidePlayPauseInfo)] | Player.Forwarding | Player.Rewinding | !String.IsEmpty(Player.SeekNumeric) | !String.IsEmpty(PVR.ChannelNumberInput) | Window.IsVisible(videoosd) | Window.IsVisible(fullscreeninfo) | !String.IsEmpty(Window(home).Property(osdinfo)) | Player.ShowInfo | !String.IsEmpty(Window(home).Property(osdshowinfo)) | [Player.Paused + Skin.HasSetting(osd.showinfoonpause)]</visible>
                 <animation effect="slide" start="0" end="0,-40" time="150" condition="VideoPlayer.Content(LiveTV) + Skin.HasSetting(pvr.showtechnicalinfo) + [Window.IsVisible(fullscreeninfo) | !String.IsEmpty(Window(home).Property(osdinfo)) | Player.ShowInfo | !String.IsEmpty(Window(home).Property(osdshowinfo)) | [Player.Paused + Skin.HasSetting(osd.showinfoonpause)]]">Conditional</animation>
                 <animation effect="slide" start="0" end="0,-80" time="200" condition="[Window.IsVisible(fullscreeninfo) | !String.IsEmpty(Window(home).Property(osdinfo)) | Player.ShowInfo | !String.IsEmpty(Window(home).Property(osdshowinfo)) | [Player.Paused + Skin.HasSetting(osd.showinfoonpause)]] + Skin.HasSetting(osd.showplot)">Conditional</animation>
                 <animation effect="slide" start="0" end="0,-60" time="200" condition="[Window.IsVisible(fullscreeninfo) | !String.IsEmpty(Window(home).Property(osdinfo)) | Player.ShowInfo | !String.IsEmpty(Window(home).Property(osdshowinfo)) | [Player.Paused + Skin.HasSetting(osd.showinfoonpause)]]">Conditional</animation>                
@@ -3107,7 +3108,7 @@
             <control type="group">
                 <visible>!Player.Paused | !Skin.HasSetting(osd.showinfoonpause)</visible>
                 <visible>!Window.IsVisible(fullscreeninfo) + !Player.ShowInfo + String.IsEmpty(Window(home).Property(osdinfo)) + String.IsEmpty(Window(home).Property(osdshowinfo))</visible>
-                <visible>Player.Seeking | Player.HasPerformedSeek(3) | Player.Paused | Player.Forwarding | Player.Rewinding | !String.IsEmpty(Player.SeekNumeric) | !String.IsEmpty(PVR.ChannelNumberInput) | Window.IsVisible(videoosd)</visible>
+                <visible>Player.Seeking | Player.HasPerformedSeek(3) | [Player.Paused + !Skin.HasSetting(HidePlayPauseInfo)] | Player.Forwarding | Player.Rewinding | !String.IsEmpty(Player.SeekNumeric) | !String.IsEmpty(PVR.ChannelNumberInput) | Window.IsVisible(videoosd)</visible>
                 <animation type="WindowOpen">
                     <effect type="fade" end="100" start="70" time="200"/>
                     <effect type="slide" end="0,0" start="0,110" time="200"/>
@@ -3225,14 +3226,16 @@
         <control type="group"> 
             <animation effect="fade" start="100" end="0" time="150" condition="Window.IsVisible(DialogPlayerProcessInfo.xml)">Conditional</animation>
             <animation effect="fade" start="0" end="100" time="250">WindowOpen</animation>
-            <animation effect="fade" end="0" start="100" time="250">WindowClose</animation>                                 
+            <animation effect="fade" end="0" start="100" time="250">WindowClose</animation>
             <control type="image">
+                <visible>!Skin.HasSetting(HidePlayPauseInfo)</visible>
                 <top>830r</top>
                 <width>100%</width>
                 <height>870</height>
                 <texture>common/fsinfoscreen.png</texture>
             </control>
             <control type="image">
+                <visible>!Skin.HasSetting(HidePlayPauseInfo)</visible>
                 <top>830r</top>
                 <width>100%</width>
                 <height>870</height>
@@ -3245,7 +3248,7 @@
         <control type="group">
             <animation effect="fade" start="100" end="0" time="150" condition="Window.IsVisible(DialogPlayerProcessInfo.xml)">Conditional</animation>
             <animation effect="slide" start="0" end="0,-74" time="150" condition="Window.IsVisible(videoosd)">Conditional</animation>
-            <bottom>80</bottom>
+            <bottom>-25</bottom>
             
             <!-- Info -->
             <control type="group">
@@ -3409,7 +3412,7 @@
             <control type="group">
                 <visible>!Player.Paused | !Skin.HasSetting(osd.showinfoonpause)</visible>
                 <visible>!Window.IsVisible(fullscreeninfo)  + String.IsEmpty(Window(home).Property(osdinfo)) + !Player.ShowInfo + String.IsEmpty(Window(home).Property(osdshowinfo))</visible>
-                <visible>Player.Seeking | Player.HasPerformedSeek(3) | Player.Paused | Player.Forwarding | Player.Rewinding | !String.IsEmpty(Player.SeekNumeric) | !String.IsEmpty(PVR.ChannelNumberInput) | Window.IsVisible(videoosd)</visible>
+                <visible>Player.Seeking | Player.HasPerformedSeek(3) | [Player.Paused + !Skin.HasSetting(HidePlayPauseInfo)] | Player.Forwarding | Player.Rewinding | !String.IsEmpty(Player.SeekNumeric) | !String.IsEmpty(PVR.ChannelNumberInput) | Window.IsVisible(videoosd)</visible>
                 <animation effect="fade" start="0" end="100" delay="150" time="250">Visible</animation>
                 <animation effect="fade" start="0" end="100" delay="150" time="250">WindowOpen</animation>
                 <animation effect="fade" end="0" start="100" time="200">Hidden</animation>
@@ -3686,7 +3689,7 @@
                 <visible>!Window.IsVisible(videoosd)</visible>
                 <visible>!Player.Paused | !Skin.HasSetting(osd.showinfoonpause)</visible>
                 <visible>!Window.IsVisible(fullscreeninfo) + String.IsEmpty(Window(home).Property(osdinfo)) + !Player.ShowInfo + String.IsEmpty(Window(home).Property(osdshowinfo))</visible>
-                <visible>Player.Seeking | Player.HasPerformedSeek(3) | Player.Paused | Player.Forwarding | Player.Rewinding | !String.IsEmpty(Player.SeekNumeric) | !String.IsEmpty(PVR.ChannelNumberInput)</visible>
+                <visible>Player.Seeking | Player.HasPerformedSeek(3) | [Player.Paused + !Skin.HasSetting(HidePlayPauseInfo)] | Player.Forwarding | Player.Rewinding | !String.IsEmpty(Player.SeekNumeric) | !String.IsEmpty(PVR.ChannelNumberInput)</visible>
                 <animation type="WindowOpen" reversible="false">
                     <effect type="fade" start="0" end="100" time="200"/>
                     <effect type="slide" end="0,0" start="0,110" time="200"/>
