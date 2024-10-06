@@ -111,7 +111,7 @@
             <control type="group">
                 <animation effect="slide" start="0,0" end="890,0" time="0" condition="VideoPlayer.Content(livetv)">Conditional</animation>
                 <width>870</width>
-                <height>293</height>
+                <height>463</height>
                 <control type="image">
                     <texture border="15" diffuse="diffuse/wall-fanart.png" colordiffuse="A6000000">common/rounded-shadow8.png</texture>
                 </control>
@@ -131,35 +131,56 @@
                         <font>Button</font>
                         <textcolor>PanelWhite100</textcolor>
                     </control>
+					<control type="label">
+						<label>[COLOR Selected]$LOCALIZE[21870]:[/COLOR] $VAR[HDRSourceVar] $VAR[DVProfileVar]$VAR[DVBLCompVar] [COLOR green][B]$VAR[DVELVar][/B][/COLOR]</label>
+						<font>Small333</font>
+                        <textcolor>PanelWhite70</textcolor>
+					</control>
                     <control type="label">
-                        <label>$INFO[Player.Process(videodecoder),[COLOR Selected]$LOCALIZE[31279]:[/COLOR] ]$VAR[VideoDecoder, (,)]</label>
+                        <label>              $INFO[Player.Process(videowidth)]x$INFO[Player.Process(videoheight)]$INFO[Player.Process(videoscantype)], $INFO[Player.Process(videodar)] AR, [UPPERCASE]$INFO[VideoPlayer.VideoCodec][/UPPERCASE], $INFO[Player.Process(VideoFPS)] FPS,  $INFO[Player.Process(video.bit.depth)] bit, $INFO[VideoPlayer.VideoBitrate] kb/s</label>
                         <font>Small333</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>
                     <control type="label">
-                        <label>$INFO[Player.Process(pixformat),[COLOR Selected]$LOCALIZE[31280]:[/COLOR] ]</label>
+                        <label>              $VAR[VideoColorSpaceVar] $LOCALIZE[20182], $VAR[VideoColorPrimariesVar] $LOCALIZE[36570], $VAR[VideoColorTransferVar] $LOCALIZE[32000], $VAR[VideoColorRangeVar] $LOCALIZE[32004]</label>
                         <font>Small333</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>
                     <control type="label">
-                        <label>[COLOR Selected]$LOCALIZE[38031]:[/COLOR] $INFO[Player.Process(videowidth)]px, $INFO[Player.Process(videoheight)]px, $INFO[Player.Process(videodar)] AR,  $INFO[VideoPlayer.VideoCodec],  $INFO[Player.Process(VideoFPS)] FPS</label>
+                        <label>[COLOR Selected]$LOCALIZE[31279]:[/COLOR] [UPPERCASE]$INFO[Player.Process(videodecoder)][/UPPERCASE]$VAR[VideoDecoder, (,)]</label>
                         <font>Small333</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>
                     <control type="label">
-                        <label>$INFO[Player.Process(deintmethod),[COLOR Selected]$LOCALIZE[16038]:[/COLOR] ]</label>
+                        <label>[COLOR Selected]$LOCALIZE[16038]:[/COLOR] [CAPITALIZE]$INFO[Player.Process(deintmethod)][/CAPITALIZE]</label>
                         <font>Small333</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>
+					<control type="label">
+						<label>[COLOR Selected]$LOCALIZE[32002]:[/COLOR] $VAR[DVVS10Var]</label>
+						<font>Small333</font>
+                        <textcolor>PanelWhite70</textcolor>
+					</control>
+					<control type="label">
+						<label>[COLOR Selected]$LOCALIZE[32001]:[/COLOR] $INFO[Player.Process(amlogic.eoft_gamut)], $INFO[Player.Process(amlogic.displaymode)], $INFO[Player.Process(amlogic.pixformat)]</label>
+						<font>Small333</font>
+                        <textcolor>PanelWhite70</textcolor>
+					</control>
+					<control type="label">
+						<label>[COLOR Selected]$LOCALIZE[462]:[/COLOR] [CAPITALIZE]$INFO[VideoPlayer.SubtitlesLanguage][/CAPITALIZE]</label>
+						<font>Small333</font>
+                        <textcolor>PanelWhite70</textcolor>
+                        <visible>VideoPlayer.HasSubtitles + VideoPlayer.SubtitlesEnabled</visible>
+					</control>
                 </control>
             </control>
 
             <!-- Audio -->
             <control type="group">
                 <animation effect="slide" start="0,0" end="0,350" time="0" condition="VideoPlayer.Content(livetv)">Conditional</animation>
-                <top>320</top>
+                <top>480</top>
                 <width>870</width>
-                <height>293</height>
+                <height>233</height>
                 <control type="image">
                     <texture border="15" diffuse="diffuse/wall-fanart.png" colordiffuse="A6000000">common/rounded-shadow8.png</texture>
                 </control>
@@ -179,22 +200,17 @@
                         <textcolor>PanelWhite100</textcolor>
                     </control>
                     <control type="label">
-                        <label>[COLOR Selected]$LOCALIZE[21444]:[/COLOR] $INFO[Player.Process(audiochannels)]</label>
+                        <label>[COLOR Selected]$LOCALIZE[21870]:[/COLOR] [CAPITALIZE]$INFO[VideoPlayer.AudioLanguage][/CAPITALIZE], $VAR[AudioCodecVar], $VAR[AudioChannelsVar] ch, $INFO[VideoPlayer.AudioBitrate] kb/s</label>
                         <font>Small333</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>
                     <control type="label">
-                        <label>[COLOR Selected]$LOCALIZE[201]:[/COLOR] $INFO[Player.Process(audiodecoder)]</label>
+                        <label>[COLOR Selected]$LOCALIZE[32001]:[/COLOR] [UPPERCASE]$INFO[Player.Process(audiodecoder)][/UPPERCASE], $INFO[Player.Process(audiobitspersample),, bits], $INFO[Player.Process(audiosamplerate),, Hz]</label>
                         <font>Small333</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>
                     <control type="label">
-                        <label>[COLOR Selected]$LOCALIZE[612]:[/COLOR] $INFO[Player.Process(audiobitspersample),, bits]</label>
-                        <font>Small333</font>
-                        <textcolor>PanelWhite70</textcolor>
-                    </control>
-                    <control type="label">
-                        <label>[COLOR Selected]$LOCALIZE[613]:[/COLOR] $INFO[Player.Process(audiosamplerate),, Hz]</label>
+                        <label>              $INFO[Player.Process(audiochannels)]</label>
                         <font>Small333</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>
@@ -206,7 +222,7 @@
                 <animation effect="slide" start="0,0" end="0,320" time="0" condition="VideoPlayer.Content(livetv)">Conditional</animation>
                 <left>890</left>
                 <width>870</width>
-                <height>490</height>
+                <height>570</height>
                 <control type="image">
                     <texture border="15" diffuse="diffuse/wall-fanart.png" colordiffuse="A6000000">common/rounded-shadow8.png</texture>
                 </control>
@@ -236,12 +252,22 @@
                         <textcolor>PanelWhite70</textcolor>
                     </control>
                     <control type="label">
-                        <label>[COLOR Selected]$LOCALIZE[14220]:[/COLOR] $INFO[System.FPS] FPS</label>
+                        <label>[COLOR Selected]$LOCALIZE[13287][/COLOR] $INFO[System.ScreenResolution]</label>
+                        <font>Small333</font>
+                        <textcolor>PanelWhite70</textcolor>
+                    </control>
+                    <control type="label">
+                        <label>[COLOR Selected]$LOCALIZE[32003]:[/COLOR] $INFO[System.FPS] FPS</label>
                         <font>Small333</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>
                     <control type="label">
                         <label>[COLOR Selected]$LOCALIZE[13284][/COLOR] $INFO[System.CpuFrequency]</label>
+                        <font>Small333</font>
+                        <textcolor>PanelWhite70</textcolor>
+                    </control>
+                    <control type="label">
+                        <label>[COLOR Selected]$LOCALIZE[22011][/COLOR] $INFO[System.CPUTemperature]</label>
                         <font>Small333</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>

@@ -2031,4 +2031,90 @@
         <value condition="!String.IsEmpty(ListItem.Property(Artist_Formed)) + !String.IsEmpty(ListItem.Property(Artist_Disbanded))">$INFO[ListItem.Property(Artist_Formed)]-$INFO[ListItem.Property(Artist_Disbanded)]</value>
         <value>$INFO[ListItem.Property(Artist_Formed)]</value>
     </variable>
+
+	<variable name="HDRSourceVar">
+		<value condition="String.Contains(Player.Process(video.source.hdr.type),dolby vision)">[CAPITALIZE]$INFO[Player.Process(video.source.hdr.type)][/CAPITALIZE]</value>
+		<value>[UPPERCASE]$INFO[Player.Process(video.source.hdr.type)][/UPPERCASE]</value>
+	</variable>
+
+	<variable name="DVProfileVar">
+		<value condition="String.Contains(Player.Process(video.dovi.codec.string),5)">Profile 5</value>
+		<value condition="String.Contains(Player.Process(video.dovi.codec.string),7)">Profile 7</value>
+		<value condition="String.Contains(Player.Process(video.dovi.codec.string),8)">Profile 8</value>
+		<value condition="String.Contains(Player.Process(video.dovi.codec.string),9)">Profile 9</value>
+		<value condition="String.Contains(Player.Process(video.dovi.codec.string),10)">Profile 10</value>
+		<value condition="String.Contains(Player.Process(video.dovi.codec.string),20)">Profile 20</value>
+		<value condition="String.Contains(Player.Process(video.dovi.codec.string),4)">Profile 4</value>
+        <value></value>
+	</variable>
+	
+	<variable name="DVBLCompVar">
+		<value condition="String.Contains(Player.Process(video.source.hdr.type),dolby vision)">.$INFO[Player.Process(video.dovi.bl.signal.compatibility)]</value>
+        <value></value>
+	</variable>
+	
+	<variable name="DVELVar">
+		<value condition="String.Contains(Player.Process(video.dovi.el.type),minimum)">[MEL]</value>
+		<value condition="String.Contains(Player.Process(video.dovi.el.type),full)">[FEL]</value>
+		<value></value>
+	</variable>
+
+	<variable name="VideoColorSpaceVar">
+		<value condition="String.Contains(Player.Process(video.color.space),unknown)">$INFO[Player.Process(video.color.space)]</value>
+		<value>[UPPERCASE]$INFO[Player.Process(video.color.space)][/UPPERCASE]</value>
+	</variable>
+
+	<variable name="VideoColorPrimariesVar">
+		<value condition="String.Contains(Player.Process(video.color.primaries),unknown)">$INFO[Player.Process(video.color.primaries)]</value>
+		<value>[UPPERCASE]$INFO[Player.Process(video.color.primaries)][/UPPERCASE]</value>
+	</variable>
+
+	<variable name="VideoColorTransferVar">
+		<value condition="String.Contains(Player.Process(video.color.transfer.characteristic),unknown)">$INFO[Player.Process(video.color.transfer.characteristic)]</value>
+		<value>[UPPERCASE]$INFO[Player.Process(video.color.transfer.characteristic)][/UPPERCASE]</value>
+	</variable>
+
+	<variable name="VideoColorRangeVar">
+		<value condition="String.Contains(Player.Process(video.color.range),unknown)">$INFO[Player.Process(video.color.range)]</value>
+		<value>[UPPERCASE]$INFO[Player.Process(video.color.range)][/UPPERCASE]</value>
+	</variable>
+
+	<variable name="DVVS10Var">
+		<value condition="String.Contains(Player.Process(amlogic.vs10.mode),dolby vision) | String.Contains(Player.Process(amlogic.vs10.mode),bypass)">[CAPITALIZE]$INFO[Player.Process(amlogic.vs10.mode)][/CAPITALIZE]</value>
+		<value>[UPPERCASE]$INFO[Player.Process(amlogic.vs10.mode)][/UPPERCASE]</value>
+	</variable>
+
+	<variable name="AudioChannelsVar">
+		<value condition="Integer.IsEqual(VideoPlayer.AudioChannels,1)">Mono</value>
+		<value condition="Integer.IsEqual(VideoPlayer.AudioChannels,2)">2.0</value>
+		<value condition="Integer.IsEqual(VideoPlayer.AudioChannels,4)">4.0</value>
+		<value condition="Integer.IsEqual(VideoPlayer.AudioChannels,5)">5.0</value>
+		<value condition="Integer.IsEqual(VideoPlayer.AudioChannels,6)">5.1</value>
+		<value condition="Integer.IsEqual(VideoPlayer.AudioChannels,7)">6.1</value>
+		<value condition="Integer.IsEqual(VideoPlayer.AudioChannels,8)">7.1</value>
+		<value condition="Integer.IsEqual(VideoPlayer.AudioChannels,10)">9.1</value>
+		<value>$LOCALIZE[13205]</value>
+	</variable>
+	
+	<variable name="AudioCodecVar">
+		<value condition="String.Contains(VideoPlayer.AudioCodec,dtshd)">DTS-HD</value>
+		<value condition="String.Contains(VideoPlayer.AudioCodec,dtshd_ma)">DTS-HD Master Audio</value>
+		<value condition="String.Contains(VideoPlayer.AudioCodec,dtshd_hra)">DTS-HD HRA</value>
+		<value condition="String.Contains(VideoPlayer.AudioCodec,dca) | String.Contains(VideoPlayer.AudioCodec,dts)">DTS</value>
+		<value condition="String.Contains(Player.Filename,dtsx) | String.Contains(Player.Filename,dts:x) | String.Contains(Player.Filename,dts-x)">DTS:X</value>
+		<value condition="String.Contains(VideoPlayer.AudioCodec,truehd)">Dolby TrueHD</value>
+		<value condition="String.Contains(VideoPlayer.AudioCodec,eac3)">Dolby Digital+ (EAC3)</value>
+		<value condition="String.Contains(VideoPlayer.AudioCodec,ac3)">Dolby Digital (AC3)</value>
+		<value condition="String.Contains(Player.Filename,.atmos.) | String.Contains(Player.Filename, atmos ) | String.Contains(Player.Filename,-atmos-) | String.Contains(Player.Filename,- atmos -) | String.Contains(Player.Filename,(atmos))">Dolby Atmos</value>
+		<value condition="String.Contains(VideoPlayer.AudioCodec,mp3)">MP3</value>
+		<value condition="String.Contains(VideoPlayer.AudioCodec,mp2)">MP2</value>
+		<value condition="String.Contains(VideoPlayer.AudioCodec,mp1)">MP1</value>
+		<value condition="String.Contains(VideoPlayer.AudioCodec,vorbis)">Vorbis</value>
+		<value condition="String.Contains(VideoPlayer.AudioCodec,aac)">AAC</value>
+		<value condition="String.Contains(VideoPlayer.AudioCodec,wmav2)">WMA</value>
+		<value condition="String.Contains(VideoPlayer.AudioCodec,wmapro)">WMA Pro</value>
+		<value condition="String.Contains(VideoPlayer.AudioCodec,pcm) | String.IsEqual(VideoPlayer.AudioCodec,pcm_bluray) | String.IsEqual(VideoPlayer.AudioCodec,pcm_s16le) | String.IsEqual(VideoPlayer.AudioCodec,pcm_s24le)">PCM</value>
+		<value condition="String.Contains(VideoPlayer.AudioCodec,cook)">Cook</value>
+		<value>$LOCALIZE[13205]</value>
+	</variable>
 </includes>

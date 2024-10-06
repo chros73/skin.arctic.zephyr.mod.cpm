@@ -2616,3 +2616,23 @@ msgstr ""
 msgctxt "#31718"
 msgid "Sandy yellow"
 msgstr ""
+
+msgctxt "#32000"
+msgid "EOTF"
+msgstr ""
+
+msgctxt "#32001"
+msgid "Output"
+msgstr ""
+
+msgctxt "#32002"
+msgid "VS10 mode"
+msgstr ""
+
+msgctxt "#32003"
+msgid "Rendering speed"
+msgstr ""
+
+msgctxt "#32004"
+msgid "Range"
+msgstr ""
