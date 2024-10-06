@@ -31,55 +31,55 @@
                         <label>      $LOCALIZE[19005]</label>
                         <left>30</left>
                         <font>Button</font>
-                        <textcolor>PanelWhite100</textcolor>
+                        <textcolor>PanelWhite90</textcolor>
                     </control>
                     <control type="label">
-                        <label>$INFO[PVR.ActStreamServiceName,[COLOR Selected]$LOCALIZE[19099]:[/COLOR] ]</label>
+                        <label>$INFO[PVR.ActStreamServiceName,[COLOR PanelWhite90]$LOCALIZE[19099]:[/COLOR] ]</label>
                         <font>Small333</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>
                     <control type="label">
-                        <label>$INFO[PVR.ActStreamProviderName,[COLOR Selected]$LOCALIZE[19101]:[/COLOR] ]</label>
+                        <label>$INFO[PVR.ActStreamProviderName,[COLOR PanelWhite90]$LOCALIZE[19101]:[/COLOR] ]</label>
                         <font>Small333</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>
                     <control type="label">
-                        <label>$INFO[PVR.ActStreamClient,[COLOR Selected]$LOCALIZE[19012]:[/COLOR] ]</label>
+                        <label>$INFO[PVR.ActStreamClient,[COLOR PanelWhite90]$LOCALIZE[19012]:[/COLOR] ]</label>
                         <font>Small333</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>
                     <control type="label">
-                        <label>$INFO[PVR.ActStreamDevice,[COLOR Selected]$LOCALIZE[19006]:[/COLOR] ]</label>
+                        <label>$INFO[PVR.ActStreamDevice,[COLOR PanelWhite90]$LOCALIZE[19006]:[/COLOR] ]</label>
                         <font>Small333</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>
                     <control type="label">
-                        <label>$INFO[PVR.ActStreamStatus,[COLOR Selected]$LOCALIZE[19007]:[/COLOR] ]</label>
+                        <label>$INFO[PVR.ActStreamStatus,[COLOR PanelWhite90]$LOCALIZE[19007]:[/COLOR] ]</label>
                         <font>Small333</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>
                     <control type="label">
-                        <label>$INFO[PVR.ActStreamEncryptionName,[COLOR Selected]$LOCALIZE[19015]:[/COLOR] ]</label>
+                        <label>$INFO[PVR.ActStreamEncryptionName,[COLOR PanelWhite90]$LOCALIZE[19015]:[/COLOR] ]</label>
                         <font>Small333</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>
                     <control type="label">
-                        <label>$INFO[PVR.ActStreamBer,[COLOR Selected]$LOCALIZE[19010]:[/COLOR] ]</label>
+                        <label>$INFO[PVR.ActStreamBer,[COLOR PanelWhite90]$LOCALIZE[19010]:[/COLOR] ]</label>
                         <font>Small333</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>
                     <control type="label">
-                        <label>$INFO[PVR.ActStreamUnc,[COLOR Selected]$LOCALIZE[19011]:[/COLOR] ]</label>
+                        <label>$INFO[PVR.ActStreamUnc,[COLOR PanelWhite90]$LOCALIZE[19011]:[/COLOR] ]</label>
                         <font>Small333</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>
                     <control type="label">
-                        <label>$INFO[PVR.ActStreamMux,[COLOR Selected]$LOCALIZE[19100]:[/COLOR] ]</label>
+                        <label>$INFO[PVR.ActStreamMux,[COLOR PanelWhite90]$LOCALIZE[19100]:[/COLOR] ]</label>
                         <font>Small333</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>
                     <control type="label">
-                        <label>$INFO[PVR.ActStreamSignal,[COLOR Selected]$LOCALIZE[19008]:[/COLOR] ]</label>
+                        <label>$INFO[PVR.ActStreamSignal,[COLOR PanelWhite90]$LOCALIZE[19008]:[/COLOR] ]</label>
                         <font>Small333</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>
@@ -92,7 +92,7 @@
                         </control>
                     </control>
                     <control type="label">
-                        <label>$INFO[PVR.ActStreamSNR,[COLOR Selected]$LOCALIZE[19009]:[/COLOR] ]</label>
+                        <label>$INFO[PVR.ActStreamSNR,[COLOR PanelWhite90]$LOCALIZE[19009]:[/COLOR] ]</label>
                         <font>Small333</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>
@@ -129,15 +129,15 @@
                         <label>      $LOCALIZE[291]</label>
                         <left>30</left>
                         <font>Button</font>
-                        <textcolor>PanelWhite100</textcolor>
+                        <textcolor>PanelWhite90</textcolor>
                     </control>
 					<control type="label">
-						<label>[COLOR Selected]$LOCALIZE[21870]:[/COLOR] $VAR[HDRSourceVar] $VAR[DVProfileVar]$VAR[DVBLCompVar] [COLOR green][B]$VAR[DVELVar][/B][/COLOR]</label>
+						<label>[COLOR PanelWhite90]$LOCALIZE[21870]:[/COLOR] $INFO[Player.Process(video.source.hdr.type)]$VAR[DVInfoVar]</label>
 						<font>Small333</font>
                         <textcolor>PanelWhite70</textcolor>
 					</control>
                     <control type="label">
-                        <label>              $INFO[Player.Process(videowidth)]x$INFO[Player.Process(videoheight)]$INFO[Player.Process(videoscantype)], $INFO[Player.Process(videodar)] AR, [UPPERCASE]$INFO[VideoPlayer.VideoCodec][/UPPERCASE], $INFO[Player.Process(VideoFPS)] FPS,  $INFO[Player.Process(video.bit.depth)] bit, $INFO[VideoPlayer.VideoBitrate] kb/s</label>
+                        <label>              $INFO[Player.Process(video.width.raw)]x$INFO[Player.Process(video.height.raw)]$INFO[Player.Process(videoscantype)], $INFO[Player.Process(videodar)] AR, [UPPERCASE]$INFO[VideoPlayer.VideoCodec][/UPPERCASE], $INFO[Player.Process(VideoFPS)] FPS, $INFO[Player.Process(video.bit.depth)] bit, $INFO[VideoPlayer.VideoBitrate] kb/s</label>
                         <font>Small333</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>
@@ -147,27 +147,27 @@
                         <textcolor>PanelWhite70</textcolor>
                     </control>
                     <control type="label">
-                        <label>[COLOR Selected]$LOCALIZE[31279]:[/COLOR] [UPPERCASE]$INFO[Player.Process(videodecoder)][/UPPERCASE]$VAR[VideoDecoder, (,)]</label>
+                        <label>[COLOR PanelWhite90]$LOCALIZE[31279]:[/COLOR] [UPPERCASE]$INFO[Player.Process(videodecoder)][/UPPERCASE]$VAR[VideoDecoder, (,)]</label>
                         <font>Small333</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>
                     <control type="label">
-                        <label>[COLOR Selected]$LOCALIZE[16038]:[/COLOR] [CAPITALIZE]$INFO[Player.Process(deintmethod)][/CAPITALIZE]</label>
+                        <label>[COLOR PanelWhite90]$LOCALIZE[16038]:[/COLOR] [CAPITALIZE]$INFO[Player.Process(deintmethod)][/CAPITALIZE]</label>
                         <font>Small333</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>
 					<control type="label">
-						<label>[COLOR Selected]$LOCALIZE[32002]:[/COLOR] $VAR[DVVS10Var]</label>
+						<label>[COLOR PanelWhite90]$LOCALIZE[32002]:[/COLOR] $INFO[Player.Process(amlogic.vs10.mode)]$VAR[DVVS10RawVar]</label>
 						<font>Small333</font>
                         <textcolor>PanelWhite70</textcolor>
 					</control>
 					<control type="label">
-						<label>[COLOR Selected]$LOCALIZE[32001]:[/COLOR] $INFO[Player.Process(amlogic.eoft_gamut)], $INFO[Player.Process(amlogic.displaymode)], $INFO[Player.Process(amlogic.pixformat)], $INFO[Player.Process(amlogic.video.fps.info)] fps</label>
+						<label>[COLOR PanelWhite90]$LOCALIZE[32001]:[/COLOR] $INFO[Player.Process(amlogic.eoft_gamut)], $INFO[Player.Process(amlogic.displaymode)], $INFO[Player.Process(amlogic.pixformat)]</label>
 						<font>Small333</font>
                         <textcolor>PanelWhite70</textcolor>
 					</control>
 					<control type="label">
-						<label>[COLOR Selected]$LOCALIZE[462]:[/COLOR] [CAPITALIZE]$INFO[VideoPlayer.SubtitlesLanguage][/CAPITALIZE]</label>
+						<label>[COLOR PanelWhite90]$LOCALIZE[462]:[/COLOR] [CAPITALIZE]$INFO[VideoPlayer.SubtitlesLanguage][/CAPITALIZE]</label>
 						<font>Small333</font>
                         <textcolor>PanelWhite70</textcolor>
                         <visible>VideoPlayer.HasSubtitles + VideoPlayer.SubtitlesEnabled</visible>
@@ -197,15 +197,15 @@
                     <control type="label">
                         <label>      $LOCALIZE[292]</label>
                         <font>Button</font>
-                        <textcolor>PanelWhite100</textcolor>
+                        <textcolor>PanelWhite90</textcolor>
                     </control>
                     <control type="label">
-                        <label>[COLOR Selected]$LOCALIZE[21870]:[/COLOR] [CAPITALIZE]$INFO[VideoPlayer.AudioLanguage][/CAPITALIZE], $VAR[AudioCodecVar], $VAR[AudioChannelsVar] ch, $INFO[VideoPlayer.AudioBitrate] kb/s</label>
+                        <label>[COLOR PanelWhite90]$LOCALIZE[21870]:[/COLOR] [CAPITALIZE]$INFO[VideoPlayer.AudioLanguage][/CAPITALIZE], $VAR[AudioCodecVar]$VAR[AudioIsDolbyAtmos], $VAR[AudioChannelsVar] ch, $INFO[Player.Process(audio.sample.rate)] KHz, $INFO[VideoPlayer.AudioBitrate] kb/s</label>
                         <font>Small333</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>
                     <control type="label">
-                        <label>[COLOR Selected]$LOCALIZE[32001]:[/COLOR] [UPPERCASE]$INFO[Player.Process(audiodecoder)][/UPPERCASE], $INFO[Player.Process(audiobitspersample),, bits], $INFO[Player.Process(audiosamplerate),, Hz]</label>
+                        <label>[COLOR PanelWhite90]$LOCALIZE[32001]:[/COLOR] [UPPERCASE]$INFO[Player.Process(audiodecoder)][/UPPERCASE], $INFO[Player.Process(audiobitspersample),, bits], $INFO[Player.Process(audiosamplerate),, Hz]</label>
                         <font>Small333</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>
@@ -222,7 +222,7 @@
                 <animation effect="slide" start="0,0" end="0,320" time="0" condition="VideoPlayer.Content(livetv)">Conditional</animation>
                 <left>890</left>
                 <width>870</width>
-                <height>570</height>
+                <height>435</height>
                 <control type="image">
                     <texture border="15" diffuse="diffuse/wall-fanart.png" colordiffuse="A6000000">common/rounded-shadow8.png</texture>
                 </control>
@@ -239,40 +239,25 @@
                     <control type="label">
                         <label>      $LOCALIZE[13000]</label>
                         <font>Button</font>
-                        <textcolor>PanelWhite100</textcolor>
+                        <textcolor>PanelWhite90</textcolor>
                     </control>
                     <control type="label">
-                        <label>[COLOR Selected]$LOCALIZE[144][/COLOR] $INFO[System.BuildVersion]</label>
+                        <label>[COLOR PanelWhite90]$LOCALIZE[32006]:[/COLOR] $INFO[System.FPS] FPS / $INFO[System.ScreenResolution]</label>
+                        <font>Small333</font>
+                        <textcolor>PanelWhite70</textcolor>
+                    </control>
+					<control type="label">
+						<label>[COLOR PanelWhite90]$LOCALIZE[32005]:[/COLOR] $INFO[Player.Process(amlogic.video.fps.info)]  $INFO[Player.Process(amlogic.video.fps.drop)]</label>
+						<font>Small333</font>
+                        <textcolor>PanelWhite70</textcolor>
+					</control>
+                    <control type="label">
+                        <label>[COLOR PanelWhite90]$LOCALIZE[140][/COLOR] $INFO[System.CpuFrequency] / $INFO[System.CPUTemperature]</label>
                         <font>Small333</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>
                     <control type="label">
-                        <label>[COLOR Selected]$LOCALIZE[12390]:[/COLOR] $INFO[System.Uptime]</label>
-                        <font>Small333</font>
-                        <textcolor>PanelWhite70</textcolor>
-                    </control>
-                    <control type="label">
-                        <label>[COLOR Selected]$LOCALIZE[13287][/COLOR] $INFO[System.ScreenResolution]</label>
-                        <font>Small333</font>
-                        <textcolor>PanelWhite70</textcolor>
-                    </control>
-                    <control type="label">
-                        <label>[COLOR Selected]$LOCALIZE[32003]:[/COLOR] $INFO[System.FPS] FPS</label>
-                        <font>Small333</font>
-                        <textcolor>PanelWhite70</textcolor>
-                    </control>
-                    <control type="label">
-                        <label>[COLOR Selected]$LOCALIZE[13284][/COLOR] $INFO[System.CpuFrequency]</label>
-                        <font>Small333</font>
-                        <textcolor>PanelWhite70</textcolor>
-                    </control>
-                    <control type="label">
-                        <label>[COLOR Selected]$LOCALIZE[22011][/COLOR] $INFO[System.CPUTemperature]</label>
-                        <font>Small333</font>
-                        <textcolor>PanelWhite70</textcolor>
-                    </control>
-                    <control type="label">
-                        <label>[COLOR Selected]$LOCALIZE[13271][/COLOR] $INFO[System.CpuUsage]</label>
+                        <label>          $INFO[System.CpuUsage]</label>
                         <font>Small333</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>
@@ -281,13 +266,13 @@
                         <control type="progress">
                             <description>CPU BAR</description>
                             <centertop>50%</centertop>
-                            <height>10</height>
+                            <height>8</height>
                             <info>System.CPUUsage</info>
                             <include>DefSettingsButton</include>
                         </control>
                     </control>
                     <control type="label">
-                        <label>[COLOR Selected]$LOCALIZE[31104]:[/COLOR] $INFO[system.memory(used.percent)]</label>
+                        <label>[COLOR PanelWhite90]$LOCALIZE[32003]:[/COLOR] $INFO[system.memory(used.percent)] ($INFO[system.memory(used)] / $INFO[system.memory(total)])</label>
                         <font>Small333</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>
@@ -296,13 +281,13 @@
                         <control type="progress">
                             <description>Memory BAR</description>
                             <centertop>50%</centertop>
-                            <height>10</height>
+                            <height>8</height>
                             <info>system.memory(used)</info>
                             <include>DefSettingsButton</include>
                         </control>
                     </control>
                     <control type="label">
-                        <label>[COLOR Selected]$LOCALIZE[31291]:[/COLOR] $INFO[Player.CacheLevel,,%]</label>
+                        <label>[COLOR PanelWhite90]$LOCALIZE[31291]:[/COLOR] $INFO[Player.CacheLevel,,%]</label>
                         <font>Small333</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>
@@ -311,7 +296,7 @@
                         <control type="progress">
                             <description>Memory BAR</description>
                             <centertop>50%</centertop>
-                            <height>10</height>
+                            <height>8</height>
                             <info>Player.CacheLevel</info>
                             <include>DefSettingsButton</include>
                         </control>

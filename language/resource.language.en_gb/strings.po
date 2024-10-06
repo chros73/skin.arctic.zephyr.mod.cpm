@@ -2630,9 +2630,21 @@ msgid "VS10 mode"
 msgstr ""
 
 msgctxt "#32003"
-msgid "Rendering speed"
+msgid "Memory"
 msgstr ""
 
 msgctxt "#32004"
 msgid "Range"
+msgstr ""
+
+msgctxt "#32005"
+msgid "FPS info"
+msgstr ""
+
+msgctxt "#32006"
+msgid "Screen"
+msgstr ""
+
+msgctxt "#32007"
+msgid "Tunnel"
 msgstr ""
