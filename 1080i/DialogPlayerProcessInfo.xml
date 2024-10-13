@@ -137,7 +137,7 @@
                         <textcolor>PanelWhite70</textcolor>
 					</control>
                     <control type="label">
-                        <label>              $INFO[Player.Process(video.width.raw)]x$INFO[Player.Process(video.height.raw)]$INFO[Player.Process(videoscantype)], $INFO[Player.Process(videodar)] AR, [UPPERCASE]$INFO[VideoPlayer.VideoCodec][/UPPERCASE], $INFO[Player.Process(VideoFPS)] FPS, $INFO[Player.Process(video.bit.depth)] bit, $INFO[VideoPlayer.VideoBitrate] kb/s</label>
+                        <label>              $INFO[Player.Process(video.width.raw)]x$INFO[Player.Process(video.height.raw)]$INFO[Player.Process(videoscantype)], $INFO[Player.Process(videodar)] AR, [UPPERCASE]$INFO[VideoPlayer.VideoCodec][/UPPERCASE], $INFO[Player.Process(VideoFPS)] FPS, $INFO[Player.Process(video.bit.depth)] bit, $INFO[VideoPlayer.VideoBitrate] Kb/s</label>
                         <font>Small333</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>
@@ -162,7 +162,7 @@
                         <textcolor>PanelWhite70</textcolor>
 					</control>
 					<control type="label">
-						<label>[COLOR PanelWhite90]$LOCALIZE[32001]:[/COLOR] $INFO[Player.Process(amlogic.eoft_gamut)], $INFO[Player.Process(amlogic.displaymode)], $INFO[Player.Process(amlogic.pixformat)]</label>
+						<label>[COLOR PanelWhite90]$LOCALIZE[32001]:[/COLOR] $INFO[Player.Process(amlogic.eoft_gamut)], $INFO[Player.Process(amlogic.displaymode)], $INFO[Player.Process(amlogic.pixformat)], $INFO[Player.Process(video.live.mibit.rate)] Mb/s</label>
 						<font>Small333</font>
                         <textcolor>PanelWhite70</textcolor>
 					</control>
@@ -200,12 +200,12 @@
                         <textcolor>PanelWhite90</textcolor>
                     </control>
                     <control type="label">
-                        <label>[COLOR PanelWhite90]$LOCALIZE[21870]:[/COLOR] [CAPITALIZE]$INFO[VideoPlayer.AudioLanguage][/CAPITALIZE], $VAR[AudioCodecVar]$VAR[AudioIsDolbyAtmos], $VAR[AudioChannelsVar] ch, $INFO[Player.Process(audio.sample.rate)] KHz, $INFO[VideoPlayer.AudioBitrate] kb/s</label>
+                        <label>[COLOR PanelWhite90]$LOCALIZE[21870]:[/COLOR] [CAPITALIZE]$INFO[VideoPlayer.AudioLanguage][/CAPITALIZE], $VAR[AudioCodecVar]$VAR[AudioSubTypeVar], $VAR[AudioChannelsVar] ch, $INFO[Player.Process(audio.sample.rate)] KHz, $INFO[VideoPlayer.AudioBitrate] Kb/s</label>
                         <font>Small333</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>
                     <control type="label">
-                        <label>[COLOR PanelWhite90]$LOCALIZE[32001]:[/COLOR] [UPPERCASE]$INFO[Player.Process(audiodecoder)][/UPPERCASE], $INFO[Player.Process(audiobitspersample),, bits], $INFO[Player.Process(audiosamplerate),, Hz]</label>
+                        <label>[COLOR PanelWhite90]$LOCALIZE[32001]:[/COLOR] [UPPERCASE]$INFO[Player.Process(audiodecoder)][/UPPERCASE], $INFO[Player.Process(audiobitspersample),, bits], $INFO[Player.Process(audio.sample.rate),, KHz], $INFO[Player.Process(audio.live.kibit.rate)] Kb/s</label>
                         <font>Small333</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>
@@ -222,7 +222,7 @@
                 <animation effect="slide" start="0,0" end="0,320" time="0" condition="VideoPlayer.Content(livetv)">Conditional</animation>
                 <left>890</left>
                 <width>870</width>
-                <height>435</height>
+                <height>495</height>
                 <control type="image">
                     <texture border="15" diffuse="diffuse/wall-fanart.png" colordiffuse="A6000000">common/rounded-shadow8.png</texture>
                 </control>
@@ -252,24 +252,89 @@
                         <textcolor>PanelWhite70</textcolor>
 					</control>
                     <control type="label">
-                        <label>[COLOR PanelWhite90]$LOCALIZE[140][/COLOR] $INFO[System.CpuFrequency] / $INFO[System.CPUTemperature]</label>
-                        <font>Small333</font>
-                        <textcolor>PanelWhite70</textcolor>
-                    </control>
-                    <control type="label">
-                        <label>          $INFO[System.CpuUsage]</label>
+                        <label>[COLOR PanelWhite90]$LOCALIZE[157] $LOCALIZE[32008]:[/COLOR] $INFO[Player.Process(video.queue.level)]% / $INFO[Player.Process(video.queue.data.level)]%</label>
                         <font>Small333</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>
                     <control type="group">
                         <height>40</height>
                         <control type="progress">
-                            <description>CPU BAR</description>
-                            <centertop>50%</centertop>
+                            <description>Video Queue BAR</description>
                             <height>8</height>
-                            <info>System.CPUUsage</info>
-                            <include>DefSettingsButton</include>
+                            <bottom>17</bottom>
+                            <left>0</left>
+                            <width>380</width>
+                            <info>Player.Process(video.queue.level)</info>
+                            <lefttexture colordiffuse="PanelWhite30">osd/progress-end.png</lefttexture>
+                            <midtexture colordiffuse="PanelWhite30">osd/progress-end.png</midtexture>
                         </control>
+                    </control>
+                    <control type="group">
+                        <height>20</height>
+                        <control type="progress">
+                            <description>Video Queue Data BAR</description>
+                            <height>8</height>
+                            <bottom>16</bottom>
+                            <left>400</left>
+                            <width>380</width>
+                            <info>Player.Process(video.queue.data.level)</info>
+                            <lefttexture colordiffuse="PanelWhite30">osd/progress-end.png</lefttexture>
+                            <midtexture colordiffuse="PanelWhite30">osd/progress-end.png</midtexture>
+                        </control>
+                    </control>
+                    <control type="label">
+                        <label>[COLOR PanelWhite90]$LOCALIZE[292] $LOCALIZE[32008]:[/COLOR] $INFO[Player.Process(audio.queue.level)]% / $INFO[Player.Process(audio.queue.data.level)]%</label>
+                        <font>Small333</font>
+                        <textcolor>PanelWhite70</textcolor>
+                    </control>
+                    <control type="group">
+                        <height>40</height>
+                        <control type="progress">
+                            <description>Audio Queue BAR</description>
+                            <height>8</height>
+                            <bottom>17</bottom>
+                            <left>0</left>
+                            <width>380</width>
+                            <info>Player.Process(audio.queue.level)</info>
+                            <lefttexture colordiffuse="PanelWhite30">osd/progress-end.png</lefttexture>
+                            <midtexture colordiffuse="PanelWhite30">osd/progress-end.png</midtexture>
+                        </control>
+                    </control>
+                    <control type="group">
+                        <height>20</height>
+                        <control type="progress">
+                            <description>Audio Queue Data BAR</description>
+                            <height>8</height>
+                            <bottom>16</bottom>
+                            <left>400</left>
+                            <width>380</width>
+                            <info>Player.Process(audio.queue.data.level)</info>
+                            <lefttexture colordiffuse="PanelWhite30">osd/progress-end.png</lefttexture>
+                            <midtexture colordiffuse="PanelWhite30">osd/progress-end.png</midtexture>
+                        </control>
+                    </control>
+                    <control type="label">
+                        <label>[COLOR PanelWhite90]$LOCALIZE[140][/COLOR] $INFO[System.CpuFrequency] / $INFO[System.CPUTemperature]</label>
+                        <font>Small333</font>
+                        <textcolor>PanelWhite70</textcolor>
+                    </control>
+                    <control type="group">
+                        <height>20</height>
+                        <control type="progress">
+                            <description>CPU BAR</description>
+                            <height>8</height>
+                            <bottom>24</bottom>
+                            <left>400</left>
+                            <width>380</width>
+                            <info>System.CPUUsage</info>
+                            <lefttexture colordiffuse="PanelWhite30">osd/progress-end.png</lefttexture>
+                            <midtexture colordiffuse="PanelWhite30">osd/progress-end.png</midtexture>
+                        </control>
+                    </control>
+                    <control type="label">
+                        <label>          $INFO[System.CpuUsage]</label>
+                        <font>Small333</font>
+                        <textcolor>PanelWhite70</textcolor>
                     </control>
                     <control type="label">
                         <label>[COLOR PanelWhite90]$LOCALIZE[32003]:[/COLOR] $INFO[system.memory(used.percent)] ($INFO[system.memory(used)] / $INFO[system.memory(total)])</label>
@@ -277,13 +342,16 @@
                         <textcolor>PanelWhite70</textcolor>
                     </control>
                     <control type="group">
-                        <height>40</height>
+                        <height>20</height>
                         <control type="progress">
                             <description>Memory BAR</description>
-                            <centertop>50%</centertop>
                             <height>8</height>
+                            <bottom>24</bottom>
+                            <left>400</left>
+                            <width>380</width>
                             <info>system.memory(used)</info>
-                            <include>DefSettingsButton</include>
+                            <lefttexture colordiffuse="PanelWhite30">osd/progress-end.png</lefttexture>
+                            <midtexture colordiffuse="PanelWhite30">osd/progress-end.png</midtexture>
                         </control>
                     </control>
                     <control type="label">
@@ -292,13 +360,16 @@
                         <textcolor>PanelWhite70</textcolor>
                     </control>
                     <control type="group">
-                        <height>40</height>
+                        <height>20</height>
                         <control type="progress">
-                            <description>Memory BAR</description>
-                            <centertop>50%</centertop>
+                            <description>Player Cache BAR</description>
                             <height>8</height>
+                            <bottom>24</bottom>
+                            <left>400</left>
+                            <width>380</width>
                             <info>Player.CacheLevel</info>
-                            <include>DefSettingsButton</include>
+                            <lefttexture colordiffuse="PanelWhite30">osd/progress-end.png</lefttexture>
+                            <midtexture colordiffuse="PanelWhite30">osd/progress-end.png</midtexture>
                         </control>
                     </control>
                 </control>

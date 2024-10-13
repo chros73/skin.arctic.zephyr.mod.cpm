@@ -2648,3 +2648,7 @@ msgstr ""
 msgctxt "#32007"
 msgid "Tunnel"
 msgstr ""
+
+msgctxt "#32008"
+msgid "queue / data queue"
+msgstr ""

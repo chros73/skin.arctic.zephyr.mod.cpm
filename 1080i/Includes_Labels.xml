@@ -2068,7 +2068,8 @@
 		<value>[UPPERCASE]$INFO[Player.Process(video.color.range)][/UPPERCASE]</value>
 	</variable>
 
-	<variable name="AudioIsDolbyAtmos">
+	<variable name="AudioSubTypeVar">
+		<value condition="!String.IsEmpty(Player.Process(audio.dts.x.type))"> [COLOR PanelWhite80][B][$INFO[Player.Process(audio.dts.x.type)]][/B][/COLOR]</value>
 		<value condition="!String.IsEmpty(Player.Process(audio.is.dolby.atmos)) | [String.Contains(VideoPlayer.AudioCodec,eac3) + String.Contains(Player.Filename,atmos)]"> [COLOR PanelWhite80][B][Atmos][/B][/COLOR]</value>
 		<value></value>
 	</variable>
@@ -2086,7 +2087,6 @@
 	</variable>
 	
 	<variable name="AudioCodecVar">
-		<value condition="String.Contains(VideoPlayer.AudioCodec,dts_x) | String.Contains(Player.Filename,dtsx) | String.Contains(Player.Filename,dts:x) | String.Contains(Player.Filename,dts-x)">DTS:X</value>
 		<value condition="String.Contains(VideoPlayer.AudioCodec,dtshd_ma) | String.Contains(VideoPlayer.AudioCodec,dtsma)">DTS-HD MA</value>
 		<value condition="String.Contains(VideoPlayer.AudioCodec,dtshd_hra)">DTS-HD HRA</value>
 		<value condition="String.Contains(VideoPlayer.AudioCodec,dtshd)">DTS-HD</value>
