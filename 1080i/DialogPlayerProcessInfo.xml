@@ -167,7 +167,7 @@
                         <textcolor>PanelWhite70</textcolor>
 					</control>
 					<control type="label">
-						<label>[COLOR PanelWhite90]$LOCALIZE[462]:[/COLOR] [CAPITALIZE]$INFO[VideoPlayer.SubtitlesLanguage][/CAPITALIZE]</label>
+						<label>[COLOR PanelWhite90]$LOCALIZE[462]:[/COLOR] $INFO[VideoPlayer.subtitleslangex] $INFO[VideoPlayer.subtitlesname]</label>
 						<font>Small333</font>
                         <textcolor>PanelWhite70</textcolor>
                         <visible>VideoPlayer.HasSubtitles + VideoPlayer.SubtitlesEnabled</visible>
@@ -200,7 +200,7 @@
                         <textcolor>PanelWhite90</textcolor>
                     </control>
                     <control type="label">
-                        <label>[COLOR PanelWhite90]$LOCALIZE[21870]:[/COLOR] [CAPITALIZE]$INFO[VideoPlayer.AudioLanguage][/CAPITALIZE], $VAR[AudioCodecVar]$VAR[AudioSubTypeVar], $VAR[AudioChannelsVar] ch, $INFO[Player.Process(audio.sample.rate)] KHz, $INFO[VideoPlayer.AudioBitrate] Kb/s</label>
+                        <label>[COLOR PanelWhite90]$LOCALIZE[21870]:[/COLOR] $INFO[VideoPlayer.audiolanguageex], $VAR[AudioCodecVar]$VAR[AudioSubTypeVar], $VAR[AudioChannelsVar] ch, $INFO[Player.Process(audio.sample.rate)] KHz, $INFO[VideoPlayer.AudioBitrate] Kb/s</label>
                         <font>Small333</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>
@@ -222,7 +222,7 @@
                 <animation effect="slide" start="0,0" end="0,320" time="0" condition="VideoPlayer.Content(livetv)">Conditional</animation>
                 <left>890</left>
                 <width>870</width>
-                <height>495</height>
+                <height>463</height>
                 <control type="image">
                     <texture border="15" diffuse="diffuse/wall-fanart.png" colordiffuse="A6000000">common/rounded-shadow8.png</texture>
                 </control>
@@ -314,7 +314,7 @@
                         </control>
                     </control>
                     <control type="label">
-                        <label>[COLOR PanelWhite90]$LOCALIZE[140][/COLOR] $INFO[System.CpuFrequency] / $INFO[System.CPUTemperature]</label>
+                        <label>[COLOR PanelWhite90]$LOCALIZE[140][/COLOR] $INFO[System.CpuFrequency] / $INFO[System.CPUTemperature]      $INFO[System.cpualtusage]</label>
                         <font>Small333</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>
@@ -324,17 +324,12 @@
                             <description>CPU BAR</description>
                             <height>8</height>
                             <bottom>24</bottom>
-                            <left>400</left>
-                            <width>380</width>
+                            <left>550</left>
+                            <width>230</width>
                             <info>System.CPUUsage</info>
                             <lefttexture colordiffuse="PanelWhite30">osd/progress-end.png</lefttexture>
                             <midtexture colordiffuse="PanelWhite30">osd/progress-end.png</midtexture>
                         </control>
-                    </control>
-                    <control type="label">
-                        <label>          $INFO[System.CpuUsage]</label>
-                        <font>Small333</font>
-                        <textcolor>PanelWhite70</textcolor>
                     </control>
                     <control type="label">
                         <label>[COLOR PanelWhite90]$LOCALIZE[32003]:[/COLOR] $INFO[system.memory(used.percent)] ($INFO[system.memory(used)] / $INFO[system.memory(total)])</label>

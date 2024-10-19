@@ -2039,7 +2039,7 @@
 	</variable>
 
 	<variable name="DVInfoVar">
-		<value condition="String.Contains(Player.Process(video.source.hdr.type),dolby vision)"> Profile $INFO[Player.Process(video.dovi.profile)].$INFO[Player.Process(video.dovi.bl.signal.compatibility)]$VAR[DVELVar] ($INFO[Player.Process(video.dovi.codec.string)])</value>
+		<value condition="String.Contains(Player.Process(video.source.hdr.type),dolby vision)"> Profile $INFO[Player.Process(video.dovi.profile)].$INFO[Player.Process(video.dovi.bl.signal.compatibility)]$VAR[DVELVar] $INFO[Player.Process(video.dovi.meta.version)] ($INFO[Player.Process(video.dovi.codec.string)])</value>
         <value></value>
 	</variable>
 	
@@ -2070,7 +2070,7 @@
 
 	<variable name="AudioSubTypeVar">
 		<value condition="!String.IsEmpty(Player.Process(audio.dts.x.type))"> [COLOR PanelWhite80][B][$INFO[Player.Process(audio.dts.x.type)]][/B][/COLOR]</value>
-		<value condition="!String.IsEmpty(Player.Process(audio.is.dolby.atmos)) | [String.Contains(VideoPlayer.AudioCodec,eac3) + String.Contains(Player.Filename,atmos)]"> [COLOR PanelWhite80][B][Atmos][/B][/COLOR]</value>
+		<value condition="!String.IsEmpty(Player.Process(audio.is.dolby.atmos))"> [COLOR PanelWhite80][B][$INFO[Player.Process(audio.is.dolby.atmos)]][/B][/COLOR]</value>
 		<value></value>
 	</variable>
 
