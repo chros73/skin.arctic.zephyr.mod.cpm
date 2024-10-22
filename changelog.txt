@@ -1,3 +1,39 @@
+[B]3.9.7[/B]
+Update PlayerProcessInfo for vA5:
+- make System section more compact
+- modify color of the bars to be less distractive
+- added CM version to DoVi Video source row
+
+[B]3.9.6[/B]
+Update PlayerProcessInfo for vA4:
+- DTS:X detection (like Atmos)
+- live audio and video bitrate in the corresponding output rows
+- added audio and video queue levels and bars in the System section (same as in PlayerDebug)
+
+[B]3.9.5[/B]
+Update PlayerProcessInfo:
+- darken labels
+- add tunnel info to VS10
+- add DoVi codec string to Video source in brackets
+- clean up variables
+- simplify System section to be more compact: remove unnecessary info
+
+[B]3.9.4[/B]
+Modify Reloaded OSD view: remove background, move it to the bottom, darken white colour
+Hide OSD during pause by a remote control when "Hide play/pause info" is enabled in settings
+Update PlayerProcessInfo for vA3:
+- added Atmos detection
+
+[B]3.9.3[/B]
+Add button to trigger PlayerDebug
+Update PlayerProcessInfo for vA2
+- added fps info
+
+[B]3.9.2[/B]
+Add button to trigger PlayerProcessInfo
+Update PlayerProcessInfo for vA1:
+- added audio and video bitrate to correponding source rows
+
 [B]3.0.3[/B]
 Fixed issue with tv show indicators
 
