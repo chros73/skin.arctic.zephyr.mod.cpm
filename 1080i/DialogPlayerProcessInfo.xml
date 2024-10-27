@@ -111,7 +111,7 @@
             <control type="group">
                 <animation effect="slide" start="0,0" end="890,0" time="0" condition="VideoPlayer.Content(livetv)">Conditional</animation>
                 <width>870</width>
-                <height>463</height>
+                <height>593</height>
                 <control type="image">
                     <texture border="15" diffuse="diffuse/wall-fanart.png" colordiffuse="A6000000">common/rounded-shadow8.png</texture>
                 </control>
@@ -147,6 +147,24 @@
                         <textcolor>PanelWhite70</textcolor>
                     </control>
                     <control type="label">
+                        <label>              [COLOR PanelWhite90]HDR:[/COLOR]    MDL $INFO[Player.Process(video.hdr.min.lum)]/$INFO[Player.Process(video.hdr.max.lum)]    maxCLL/FALL $INFO[Player.Process(video.hdr.max.cll)]/$INFO[Player.Process(video.hdr.max.fall)]  nits</label>
+                        <font>Small333</font>
+                        <textcolor>PanelWhite70</textcolor>
+                        <visible>String.Contains(Player.Process(video.source.hdr.type),HDR) | String.IsEqual(Player.Process(video.dovi.bl.signal.compatibility),1) | String.IsEqual(Player.Process(video.dovi.bl.signal.compatibility),6)</visible>
+                    </control>
+                    <control type="label">
+                        <label>              [COLOR PanelWhite90]RPU:[/COLOR]    MDL $INFO[Player.Process(video.dovi.l6.min.lum)]/$INFO[Player.Process(video.dovi.l6.max.lum)]    maxCLL/FALL $INFO[Player.Process(video.dovi.l6.max.cll)]/$INFO[Player.Process(video.dovi.l6.max.fall)]  nits</label>
+                        <font>Small333</font>
+                        <textcolor>PanelWhite70</textcolor>
+                        <visible>String.IsEqual(Player.Process(video.dovi.rpu.present),1)</visible>
+                    </control>
+                    <control type="label">
+                        <label> </label>
+                        <font>Small333</font>
+                        <textcolor>PanelWhite70</textcolor>
+                        <visible>String.IsEqual(Player.Process(video.dovi.rpu.present),0) | [!String.Contains(Player.Process(video.source.hdr.type),HDR) + !String.IsEqual(Player.Process(video.dovi.bl.signal.compatibility),1) + !String.IsEqual(Player.Process(video.dovi.bl.signal.compatibility),6)]</visible>
+                    </control>
+                    <control type="label">
                         <label>[COLOR PanelWhite90]$LOCALIZE[31279]:[/COLOR] [UPPERCASE]$INFO[Player.Process(videodecoder)][/UPPERCASE]$VAR[VideoDecoder, (,)]</label>
                         <font>Small333</font>
                         <textcolor>PanelWhite70</textcolor>
@@ -166,6 +184,18 @@
 						<font>Small333</font>
                         <textcolor>PanelWhite70</textcolor>
 					</control>
+                    <control type="label">
+                        <label>        min/max/avgFLL   $INFO[Player.Process(video.dovi.l1.min.nits)]/$INFO[Player.Process(video.dovi.l1.max.nits)]/$INFO[Player.Process(video.dovi.l1.avg.nits)]  nits    ($INFO[Player.Process(video.dovi.l1.min.pq)]/$INFO[Player.Process(video.dovi.l1.max.pq)]/$INFO[Player.Process(video.dovi.l1.avg.pq)]  PQ)</label>
+                        <font>Small333</font>
+                        <textcolor>PanelWhite70</textcolor>
+                        <visible>String.IsEqual(Player.Process(video.dovi.rpu.present),1)</visible>
+                    </control>
+                    <control type="label">
+                        <label> </label>
+                        <font>Small333</font>
+                        <textcolor>PanelWhite70</textcolor>
+                        <visible>String.IsEqual(Player.Process(video.dovi.rpu.present),0)</visible>
+                    </control>
 					<control type="label">
 						<label>[COLOR PanelWhite90]$LOCALIZE[462]:[/COLOR] $INFO[VideoPlayer.subtitleslangex] $INFO[VideoPlayer.subtitlesname]</label>
 						<font>Small333</font>
@@ -178,7 +208,7 @@
             <!-- Audio -->
             <control type="group">
                 <animation effect="slide" start="0,0" end="0,350" time="0" condition="VideoPlayer.Content(livetv)">Conditional</animation>
-                <top>480</top>
+                <top>610</top>
                 <width>870</width>
                 <height>233</height>
                 <control type="image">

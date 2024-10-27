@@ -1,3 +1,7 @@
+[B]3.9.8[/B]
+Update PlayerProcessInfo for 20241027:
+- add static and dynamic metadata for HDR10 and DoVi sources
+
 [B]3.9.7[/B]
 Update PlayerProcessInfo for vA5:
 - make System section more compact
