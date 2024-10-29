@@ -4913,4 +4913,11 @@
         <scrollspeed>40</scrollspeed>
         <scrollsuffix>  ••  </scrollsuffix>
     </include>
+
+    <include name="DefCustomHeight">
+        <param name="height" />
+        <definition>
+        <height>$PARAM[height]</height>
+        </definition>
+    </include>
 </includes>
