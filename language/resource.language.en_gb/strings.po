@@ -2652,3 +2652,7 @@ msgstr ""
 msgctxt "#32008"
 msgid "queue / data queue"
 msgstr ""
+
+msgctxt "#32009"
+msgid "Conversion"
+msgstr ""

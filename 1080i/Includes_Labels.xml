@@ -2038,11 +2038,23 @@
 		<value></value>
 	</variable>
 
+	<variable name="DVSourceELVar">
+		<value condition="String.Contains(Player.Process(video.source.dovi.el.type),minimum)"> [COLOR PanelWhite80][B][MEL][/B][/COLOR]</value>
+		<value condition="String.Contains(Player.Process(video.source.dovi.el.type),full)"> [COLOR PanelWhite80][B][FEL][/B][/COLOR]</value>
+		<value></value>
+	</variable>
+
 	<variable name="DVInfoVar">
+		<value condition="!String.IsEqual(Player.Process(video.source.dovi.profile),0)"> Profile $INFO[Player.Process(video.source.dovi.profile)].$INFO[Player.Process(video.source.dovi.bl.signal.compatibility)]$VAR[DVSourceELVar] $INFO[Player.Process(video.dovi.meta.version)] ($INFO[Player.Process(video.dovi.codec.string)])</value>
 		<value condition="String.Contains(Player.Process(video.source.hdr.type),dolby vision)"> Profile $INFO[Player.Process(video.dovi.profile)].$INFO[Player.Process(video.dovi.bl.signal.compatibility)]$VAR[DVELVar] $INFO[Player.Process(video.dovi.meta.version)] ($INFO[Player.Process(video.dovi.codec.string)])</value>
         <value></value>
 	</variable>
 	
+	<variable name="DVConversionInfoVar">
+		<value condition="!String.IsEqual(Player.Process(video.source.dovi.profile),0)">                   [COLOR PanelWhite90]$LOCALIZE[32009]:[/COLOR] Profile $INFO[Player.Process(video.dovi.profile)].$INFO[Player.Process(video.dovi.bl.signal.compatibility)]$VAR[DVELVar]</value>
+		<value></value>
+	</variable>
+
 	<variable name="DVVS10RawVar">
 		<value condition="Integer.IsEqual(Player.Process(amlogic.vs10.mode.raw),1)"> ($LOCALIZE[32007])</value>
 		<value></value>
