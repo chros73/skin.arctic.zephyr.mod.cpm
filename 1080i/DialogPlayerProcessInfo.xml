@@ -148,13 +148,13 @@
                         <textcolor>PanelWhite70</textcolor>
                     </control>
                     <control type="label">
-                        <label>              [COLOR PanelWhite90]HDR:[/COLOR]    [COLOR PanelWhite90]MDL[/COLOR] $INFO[Player.Process(video.hdr.min.lum)]/$INFO[Player.Process(video.hdr.max.lum)]    [COLOR PanelWhite90]maxCLL/FALL[/COLOR] $INFO[Player.Process(video.hdr.max.cll)]/$INFO[Player.Process(video.hdr.max.fall)]  nits</label>
+                        <label>              [COLOR PanelWhite90]HDR10:[/COLOR]    [COLOR PanelWhite90]MDL[/COLOR] $INFO[Player.Process(video.hdr.min.lum)]/$INFO[Player.Process(video.hdr.max.lum)]    [COLOR PanelWhite90]maxCLL/FALL[/COLOR] $INFO[Player.Process(video.hdr.max.cll)]/$INFO[Player.Process(video.hdr.max.fall)]  nits</label>
                         <font>Mini</font>
                         <textcolor>PanelWhite70</textcolor>
                         <visible>String.Contains(Player.Process(video.source.hdr.type),HDR) | String.IsEqual(Player.Process(video.dovi.bl.signal.compatibility),1) | String.IsEqual(Player.Process(video.dovi.bl.signal.compatibility),6)</visible>
                     </control>
                     <control type="label">
-                        <label>              [COLOR PanelWhite90]RPU:[/COLOR]    [COLOR PanelWhite90]MDL[/COLOR] $INFO[Player.Process(video.dovi.source.min.nits)]/$INFO[Player.Process(video.dovi.source.max.nits)]    [COLOR PanelWhite90]maxCLL/FALL[/COLOR] $INFO[Player.Process(video.dovi.l6.max.cll)]/$INFO[Player.Process(video.dovi.l6.max.fall)]  nits</label>
+                        <label>              [COLOR PanelWhite90]RPU:[/COLOR]        [COLOR PanelWhite90]MDL[/COLOR] $INFO[Player.Process(video.dovi.source.min.nits)]/$INFO[Player.Process(video.dovi.source.max.nits)]    [COLOR PanelWhite90]maxCLL/FALL[/COLOR] $INFO[Player.Process(video.dovi.l6.max.cll)]/$INFO[Player.Process(video.dovi.l6.max.fall)]  nits</label>
                         <font>Mini</font>
                         <textcolor>PanelWhite70</textcolor>
                         <visible>String.IsEqual(Player.Process(video.dovi.rpu.present),1)</visible>
@@ -175,7 +175,7 @@
                         <textcolor>PanelWhite70</textcolor>
 					</control>
                     <control type="label">
-                        <label>       [COLOR PanelWhite90]min/max/avgFLL:[/COLOR]    $INFO[Player.Process(video.dovi.l1.min.nits)]/$INFO[Player.Process(video.dovi.l1.max.nits)]/$INFO[Player.Process(video.dovi.l1.avg.nits)]  nits    ($INFO[Player.Process(video.dovi.l1.min.pq)]/$INFO[Player.Process(video.dovi.l1.max.pq)]/$INFO[Player.Process(video.dovi.l1.avg.pq)]  PQ)</label>
+                        <label>        [COLOR PanelWhite90]min/max/avgFLL:[/COLOR]     $INFO[Player.Process(video.dovi.l1.min.nits)]/$INFO[Player.Process(video.dovi.l1.max.nits)]/$INFO[Player.Process(video.dovi.l1.avg.nits)]  nits      ($INFO[Player.Process(video.dovi.l1.min.pq)]/$INFO[Player.Process(video.dovi.l1.max.pq)]/$INFO[Player.Process(video.dovi.l1.avg.pq)]  PQ)</label>
                         <font>Mini</font>
                         <textcolor>PanelWhite70</textcolor>
                         <visible>String.IsEqual(Player.Process(video.dovi.rpu.present),1)</visible>

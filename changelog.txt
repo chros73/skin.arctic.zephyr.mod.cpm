@@ -1,3 +1,9 @@
+[B]3.9.9[/B]
+Update PlayerProcessInfo for 20241030:
+- make it more compact and move it to the top
+- adjust the height of Video and Audio sections dynamically based on the available info
+- display Conversion if P7 conversion is set in settings
+
 [B]3.9.8[/B]
 Update PlayerProcessInfo for 20241027:
 - add static and dynamic metadata for HDR10 and DoVi sources
