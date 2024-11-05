@@ -7,6 +7,10 @@
                 <visible allowhiddenfocus="true">false</visible>
                 <onclick condition="String.IsEmpty(Window(home).Property(playerprocessinfocompact))">SetProperty(playerprocessinfocompact,1,home)</onclick>
                 <onclick condition="!String.IsEmpty(Window(home).Property(playerprocessinfocompact))">ClearProperty(playerprocessinfocompact,home)</onclick>
+                <onleft>Action(StepBack)</onleft>
+                <onright>Action(StepForward)</onright>
+                <onup>Action(ChapterOrBigStepForward)</onup>
+                <ondown>Action(ChapterOrBigStepBack)</ondown>
             </control>
         </control>
 
