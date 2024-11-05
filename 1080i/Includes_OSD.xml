@@ -1875,8 +1875,8 @@
             <include>DefOSDUpDown</include>
             <texturefocus colordiffuse="$VAR[ColorHighlight]" flipx="true">osd/info.png</texturefocus>
             <texturenofocus colordiffuse="Dark1" flipx="true">osd/info.png</texturenofocus>
+            <onclick>Dialog.Close(videoosd)</onclick>
             <onclick>ActivateWindow(playerprocessinfo)</onclick>
-            <onclick>SetFocus(9000)</onclick>
         </control>
 		<control type="button" id="998">
             <description>PlayerDebug</description>
@@ -1888,6 +1888,7 @@
             <texturefocus colordiffuse="$VAR[ColorHighlight]" flipx="true">osd/tempo.png</texturefocus>
             <texturenofocus colordiffuse="Dark1" flipx="true">osd/tempo.png</texturenofocus>
             <onclick>PlayerDebug</onclick>
+            <onclick>Dialog.Close(videoosd)</onclick>
         </control>
         <control type="button" id="24">
             <description>Settings</description>
@@ -2066,8 +2067,8 @@
             <include>DefOSDUpDown</include>
             <texturefocus colordiffuse="$VAR[ColorHighlight]" flipx="true">osd/info.png</texturefocus>
             <texturenofocus colordiffuse="Dark1" flipx="true">osd/info.png</texturenofocus>
+            <onclick>Dialog.Close(videoosd)</onclick>
             <onclick>ActivateWindow(playerprocessinfo)</onclick>
-            <onclick>SetFocus(9000)</onclick>
         </control>
 		<control type="button" id="998">
             <description>PlayerDebug</description>
@@ -2079,6 +2080,7 @@
             <texturefocus colordiffuse="$VAR[ColorHighlight]" flipx="true">osd/tempo.png</texturefocus>
             <texturenofocus colordiffuse="Dark1" flipx="true">osd/tempo.png</texturenofocus>
             <onclick>PlayerDebug</onclick>
+            <onclick>Dialog.Close(videoosd)</onclick>
         </control>
         <control type="button" id="19">
             <description>Settings</description>
@@ -2256,8 +2258,8 @@
             <include>DefOSDUpDown</include>
             <texturefocus colordiffuse="$VAR[ColorHighlight]" flipx="true">osd/info.png</texturefocus>
             <texturenofocus colordiffuse="Dark1" flipx="true">osd/info.png</texturenofocus>
+            <onclick>Dialog.Close(videoosd)</onclick>
             <onclick>ActivateWindow(playerprocessinfo)</onclick>
-            <onclick>SetFocus(9000)</onclick>
         </control>
 		<control type="button" id="998">
             <description>PlayerDebug</description>
@@ -2269,6 +2271,7 @@
             <texturefocus colordiffuse="$VAR[ColorHighlight]" flipx="true">osd/tempo.png</texturefocus>
             <texturenofocus colordiffuse="Dark1" flipx="true">osd/tempo.png</texturenofocus>
             <onclick>PlayerDebug</onclick>
+            <onclick>Dialog.Close(videoosd)</onclick>
         </control>
         <control type="button" id="19">
             <description>Settings</description>
@@ -2634,7 +2637,6 @@
             <animation type="WindowClose">
                 <effect type="fade" end="0" start="100" time="150"/>
             </animation>
-            <animation effect="fade" start="100" end="0" time="150" condition="Window.IsVisible(DialogPlayerProcessInfo.xml)">Conditional</animation>
 
             <!-- Sub Menu -->
             <control type="group">
@@ -3224,7 +3226,6 @@
         
         <!-- New OSD -->
         <control type="group"> 
-            <animation effect="fade" start="100" end="0" time="150" condition="Window.IsVisible(DialogPlayerProcessInfo.xml)">Conditional</animation>
             <animation effect="fade" start="0" end="100" time="250">WindowOpen</animation>
             <animation effect="fade" end="0" start="100" time="250">WindowClose</animation>
             <control type="image">
@@ -3246,7 +3247,6 @@
         
         <!-- New -->
         <control type="group">
-            <animation effect="fade" start="100" end="0" time="150" condition="Window.IsVisible(DialogPlayerProcessInfo.xml)">Conditional</animation>
             <animation effect="slide" start="0" end="0,-74" time="150" condition="Window.IsVisible(videoosd)">Conditional</animation>
             <bottom>-25</bottom>
             
