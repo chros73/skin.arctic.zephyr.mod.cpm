@@ -162,27 +162,91 @@
                         <textcolor>PanelWhite70</textcolor>
                     </control>
                     <control type="label">
-                        <label>              [COLOR PanelWhite90]HDR10:[/COLOR]    [COLOR PanelWhite90]MDL[/COLOR] $INFO[Player.Process(video.hdr.min.lum)]/$INFO[Player.Process(video.hdr.max.lum)]    [COLOR PanelWhite90]maxCLL/FALL[/COLOR] $INFO[Player.Process(video.hdr.max.cll)]/$INFO[Player.Process(video.hdr.max.fall)]  nits</label>
+                        <label>              [COLOR PanelWhite90]HDR10:[/COLOR]</label>
                         <font>Mini</font>
                         <textcolor>PanelWhite70</textcolor>
                         <visible>String.Contains(Player.Process(video.source.hdr.type),HDR) | String.IsEqual(Player.Process(video.dovi.bl.signal.compatibility),1) | String.IsEqual(Player.Process(video.dovi.bl.signal.compatibility),6)</visible>
                     </control>
+                    <control type="group">
+                        <height>31</height>
+                        <control type="label">
+                            <bottom>0</bottom>
+                            <left>180</left>
+                            <label>[COLOR PanelWhite90]MDL[/COLOR] $INFO[Player.Process(video.hdr.min.lum)]/$INFO[Player.Process(video.hdr.max.lum)]</label>
+                            <font>Mini</font>
+                            <textcolor>PanelWhite70</textcolor>
+                            <visible>String.Contains(Player.Process(video.source.hdr.type),HDR) | String.IsEqual(Player.Process(video.dovi.bl.signal.compatibility),1) | String.IsEqual(Player.Process(video.dovi.bl.signal.compatibility),6)</visible>
+                        </control>
+                    </control>
+                    <control type="group">
+                        <height>31</height>
+                        <control type="label">
+                            <bottom>0</bottom>
+                            <left>400</left>
+                            <label>[COLOR PanelWhite90]maxCLL/FALL[/COLOR] $INFO[Player.Process(video.hdr.max.cll)]/$INFO[Player.Process(video.hdr.max.fall)]  nits</label>
+                            <font>Mini</font>
+                            <textcolor>PanelWhite70</textcolor>
+                            <visible>String.Contains(Player.Process(video.source.hdr.type),HDR) | String.IsEqual(Player.Process(video.dovi.bl.signal.compatibility),1) | String.IsEqual(Player.Process(video.dovi.bl.signal.compatibility),6)</visible>
+                        </control>
+                    </control>
                     <control type="label">
-                        <label>              [COLOR PanelWhite90]RPU:[/COLOR]        [COLOR PanelWhite90]MDL[/COLOR] $INFO[Player.Process(video.dovi.source.min.nits)]/$INFO[Player.Process(video.dovi.source.max.nits)]    [COLOR PanelWhite90]maxCLL/FALL[/COLOR] $INFO[Player.Process(video.dovi.l6.max.cll)]/$INFO[Player.Process(video.dovi.l6.max.fall)]  nits</label>
+                        <label>              [COLOR PanelWhite90]RPU:[/COLOR]</label>
                         <font>Mini</font>
                         <textcolor>PanelWhite70</textcolor>
                         <visible>String.IsEqual(Player.Process(video.dovi.rpu.present),1)</visible>
                     </control>
+                    <control type="group">
+                        <height>31</height>
+                        <control type="label">
+                            <bottom>0</bottom>
+                            <left>180</left>
+                            <label>[COLOR PanelWhite90]MDL[/COLOR] $INFO[Player.Process(video.dovi.source.min.nits)]/$INFO[Player.Process(video.dovi.source.max.nits)]</label>
+                            <font>Mini</font>
+                            <textcolor>PanelWhite70</textcolor>
+                            <visible>String.IsEqual(Player.Process(video.dovi.rpu.present),1)</visible>
+                        </control>
+                    </control>
+                    <control type="group">
+                        <height>31</height>
+                        <control type="label">
+                            <bottom>0</bottom>
+                            <left>400</left>
+                            <label>[COLOR PanelWhite90]maxCLL/FALL[/COLOR] $INFO[Player.Process(video.dovi.l6.max.cll)]/$INFO[Player.Process(video.dovi.l6.max.fall)]  nits</label>
+                            <font>Mini</font>
+                            <textcolor>PanelWhite70</textcolor>
+                            <visible>String.IsEqual(Player.Process(video.dovi.rpu.present),1)</visible>
+                        </control>
+                    </control>
                     <control type="label">
-                        <label>[COLOR PanelWhite90]$LOCALIZE[32011]:[/COLOR] [UPPERCASE]$INFO[Player.Process(videodecoder)][/UPPERCASE]$VAR[VideoDecoder, (,)]                                 [COLOR PanelWhite90]$LOCALIZE[32012]:[/COLOR] [CAPITALIZE]$INFO[Player.Process(deintmethod)][/CAPITALIZE]</label>
+                        <label>[COLOR PanelWhite90]$LOCALIZE[32011]:[/COLOR] [UPPERCASE]$INFO[Player.Process(videodecoder)][/UPPERCASE]$VAR[VideoDecoder, (,)]</label>
                         <font>Mini</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>
+                    <control type="group">
+                        <height>31</height>
+                        <control type="label">
+                            <bottom>0</bottom>
+                            <left>442</left>
+                            <label>[COLOR PanelWhite90]$LOCALIZE[32012]:[/COLOR] [CAPITALIZE]$INFO[Player.Process(deintmethod)][/CAPITALIZE]</label>
+                            <font>Mini</font>
+                            <textcolor>PanelWhite70</textcolor>
+                        </control>
+                    </control>
 					<control type="label">
-						<label>[COLOR PanelWhite90]$LOCALIZE[32002]:[/COLOR] $INFO[Player.Process(amlogic.vs10.mode)]$VAR[DVVS10RawVar]$VAR[DVConversionInfoVar]</label>
+						<label>[COLOR PanelWhite90]$LOCALIZE[32002]:[/COLOR] $INFO[Player.Process(amlogic.vs10.mode)]$VAR[DVVS10RawVar]</label>
 						<font>Mini</font>
                         <textcolor>PanelWhite70</textcolor>
 					</control>
+                    <control type="group">
+                        <height>31</height>
+                        <control type="label">
+                            <bottom>0</bottom>
+                            <left>442</left>
+                            <label>$VAR[DVConversionInfoVar]</label>
+                            <font>Mini</font>
+                            <textcolor>PanelWhite70</textcolor>
+                        </control>
+                    </control>
 					<control type="label">
 						<label>[COLOR PanelWhite90]$LOCALIZE[32001]:[/COLOR] $INFO[Player.Process(amlogic.eoft_gamut)], $INFO[Player.Process(amlogic.displaymode)], $INFO[Player.Process(amlogic.pixformat)], $INFO[Player.Process(video.live.mibit.rate)] Mb/s</label>
 						<font>Mini</font>

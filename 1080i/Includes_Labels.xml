@@ -2051,7 +2051,7 @@
 	</variable>
 	
 	<variable name="DVConversionInfoVar">
-		<value condition="!String.IsEqual(Player.Process(video.source.dovi.profile),0)">                   [COLOR PanelWhite90]$LOCALIZE[32009]:[/COLOR] Profile $INFO[Player.Process(video.dovi.profile)].$INFO[Player.Process(video.dovi.bl.signal.compatibility)]$VAR[DVELVar]</value>
+		<value condition="!String.IsEqual(Player.Process(video.source.dovi.profile),0)">[COLOR PanelWhite90]$LOCALIZE[32009]:[/COLOR] Profile $INFO[Player.Process(video.dovi.profile)].$INFO[Player.Process(video.dovi.bl.signal.compatibility)]$VAR[DVELVar]</value>
 		<value></value>
 	</variable>
 
