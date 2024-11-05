@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
+    <defaultcontrol always="true">9970</defaultcontrol>
     <controls>
+        <control type="group">
+            <control type="button" id="9970">
+                <visible allowhiddenfocus="true">false</visible>
+                <onclick condition="String.IsEmpty(Window(home).Property(playerprocessinfocompact))">SetProperty(playerprocessinfocompact,1,home)</onclick>
+                <onclick condition="!String.IsEmpty(Window(home).Property(playerprocessinfocompact))">ClearProperty(playerprocessinfocompact,home)</onclick>
+            </control>
+        </control>
+
         <control type="group">
             <include>Animation.FadeIn</include>
             <include>Animation.FadeOut</include>
             <left>-9</left>
             <top>0</top>
             <width>1920</width>
-            <height>360</height>
+            <height>80</height>
 
             <!-- PVR -->
             <control type="group">
@@ -106,8 +115,9 @@
                 </control>
             </control>
 
-            <!-- Video -->
+            <!-- Video Full -->
             <control type="group">
+                <visible>String.IsEmpty(Window(home).Property(playerprocessinfocompact))</visible>
                 <animation effect="slide" start="0,0" end="890,0" time="0" condition="VideoPlayer.Content(livetv)">Conditional</animation>
                 <top>-10</top>
                 <width>760</width>
@@ -183,8 +193,44 @@
                 </control>
             </control>
 
-            <!-- Audio -->
+            <!-- Video Compact -->
             <control type="group">
+                <visible>!String.IsEmpty(Window(home).Property(playerprocessinfocompact))</visible>
+                <animation effect="slide" start="0,0" end="890,0" time="0" condition="VideoPlayer.Content(livetv)">Conditional</animation>
+                <top>-10</top>
+                <width>760</width>
+                <include content="DefCustomHeight" condition="String.IsEqual(Player.Process(video.dovi.rpu.present),1)">
+                    <param name="height" value="86" />
+                </include>
+                <include content="DefCustomHeight" condition="String.IsEqual(Player.Process(video.dovi.rpu.present),0)">
+                    <param name="height" value="50" />
+                </include>
+                <control type="image">
+                    <width>760</width>
+                    <texture border="15" diffuse="diffuse/wall-fanart.png" colordiffuse="A6000000">common/rounded-shadow8.png</texture>
+                </control>
+                <control type="grouplist">
+                    <left>15</left>
+                    <top>-5</top>
+                    <width>760</width>
+                    <itemgap>-31</itemgap>
+					<control type="label">
+						<label>[COLOR PanelWhite90]$LOCALIZE[32001]:[/COLOR] $INFO[Player.Process(amlogic.eoft_gamut)], $INFO[Player.Process(amlogic.displaymode)], $INFO[Player.Process(amlogic.pixformat)], $INFO[Player.Process(video.live.mibit.rate)] Mb/s</label>
+						<font>Mini</font>
+                        <textcolor>PanelWhite70</textcolor>
+					</control>
+                    <control type="label">
+                        <label>        [COLOR PanelWhite90]min/max/avgFLL:[/COLOR]     $INFO[Player.Process(video.dovi.l1.min.nits)]/$INFO[Player.Process(video.dovi.l1.max.nits)]/$INFO[Player.Process(video.dovi.l1.avg.nits)]  nits      ($INFO[Player.Process(video.dovi.l1.min.pq)]/$INFO[Player.Process(video.dovi.l1.max.pq)]/$INFO[Player.Process(video.dovi.l1.avg.pq)]  PQ)</label>
+                        <font>Mini</font>
+                        <textcolor>PanelWhite70</textcolor>
+                        <visible>String.IsEqual(Player.Process(video.dovi.rpu.present),1)</visible>
+                    </control>
+                </control>
+            </control>
+
+            <!-- Audio Full -->
+            <control type="group">
+                <visible>String.IsEmpty(Window(home).Property(playerprocessinfocompact))</visible>
                 <animation effect="slide" start="0,0" end="0,350" time="0" condition="VideoPlayer.Content(livetv)">Conditional</animation>
                 <top>-10</top>
                 <left>745</left>
@@ -192,7 +238,7 @@
                 <include content="DefCustomHeight" condition="VideoPlayer.HasSubtitles + VideoPlayer.SubtitlesEnabled">
                     <param name="height" value="162" />
                 </include>
-                <include content="DefCustomHeight" condition="!VideoPlayer.HasSubtitles | !VideoPlayer.SubtitlesEnabled">
+                <include content="DefCustomHeight" condition="[!VideoPlayer.HasSubtitles | !VideoPlayer.SubtitlesEnabled]">
                     <param name="height" value="126" />
                 </include>
                 <control type="image">
@@ -228,8 +274,34 @@
                 </control>
             </control>
 
-            <!-- System -->
+            <!-- Audio Compact -->
             <control type="group">
+                <visible>!String.IsEmpty(Window(home).Property(playerprocessinfocompact))</visible>
+                <animation effect="slide" start="0,0" end="0,350" time="0" condition="VideoPlayer.Content(livetv)">Conditional</animation>
+                <top>-10</top>
+                <left>745</left>
+                <width>608</width>
+                <height>50</height>
+                <control type="image">
+                    <width>608</width>
+                    <texture border="15" diffuse="diffuse/wall-fanart.png" colordiffuse="A6000000">common/rounded-shadow8.png</texture>
+                </control>
+                <control type="grouplist">
+                    <left>15</left>
+                    <top>-5</top>
+                    <width>608</width>
+                    <itemgap>-31</itemgap>
+                    <control type="label">
+                        <label>[COLOR PanelWhite90]$LOCALIZE[32001]:[/COLOR] [UPPERCASE]$INFO[Player.Process(audiodecoder)][/UPPERCASE], $INFO[Player.Process(audiobitspersample),, bits], $INFO[Player.Process(audio.sample.rate),, KHz], $INFO[Player.Process(audio.live.kibit.rate)] Kb/s</label>
+                        <font>Mini</font>
+                        <textcolor>PanelWhite70</textcolor>
+                    </control>
+                </control>
+            </control>
+
+            <!-- System Full -->
+            <control type="group">
+                <visible>String.IsEmpty(Window(home).Property(playerprocessinfocompact))</visible>
                 <animation effect="slide" start="0,0" end="0,320" time="0" condition="VideoPlayer.Content(livetv)">Conditional</animation>
                 <top>-10</top>
                 <left>1338</left>
@@ -372,6 +444,94 @@
                     </control>
                 </control>
             </control>
+
+            <!-- System Compact -->
+            <control type="group">
+                <visible>!String.IsEmpty(Window(home).Property(playerprocessinfocompact))</visible>
+                <animation effect="slide" start="0,0" end="0,320" time="0" condition="VideoPlayer.Content(livetv)">Conditional</animation>
+                <top>-10</top>
+                <left>1338</left>
+                <width>600</width>
+                <height>156</height>
+                <control type="image">
+                    <width>600</width>
+                    <texture border="15" diffuse="diffuse/wall-fanart.png" colordiffuse="A6000000">common/rounded-shadow8.png</texture>
+                </control>
+                <control type="grouplist">
+                    <left>15</left>
+                    <top>-5</top>
+                    <width>600</width>
+                    <itemgap>-31</itemgap>
+					<control type="label">
+						<label>[COLOR PanelWhite90]$LOCALIZE[32005]:[/COLOR] $INFO[Player.Process(amlogic.video.fps.info)]  $INFO[Player.Process(amlogic.video.fps.drop)]</label>
+						<font>Mini</font>
+                        <textcolor>PanelWhite70</textcolor>
+					</control>
+                    <control type="label">
+                        <label>[COLOR PanelWhite90]$LOCALIZE[157] $LOCALIZE[32008]:[/COLOR] $INFO[Player.Process(video.queue.level)]% / $INFO[Player.Process(video.queue.data.level)]%</label>
+                        <font>Mini</font>
+                        <textcolor>PanelWhite70</textcolor>
+                    </control>
+                    <control type="group">
+                        <height>50</height>
+                        <control type="progress">
+                            <description>Video Queue BAR</description>
+                            <height>8</height>
+                            <bottom>21</bottom>
+                            <left>0</left>
+                            <width>275</width>
+                            <info>Player.Process(video.queue.level)</info>
+                            <lefttexture colordiffuse="PanelWhite30">osd/progress-end.png</lefttexture>
+                            <midtexture colordiffuse="PanelWhite30">osd/progress-end.png</midtexture>
+                        </control>
+                    </control>
+                    <control type="group">
+                        <height>30</height>
+                        <control type="progress">
+                            <description>Video Queue Data BAR</description>
+                            <height>8</height>
+                            <bottom>20</bottom>
+                            <left>295</left>
+                            <width>275</width>
+                            <info>Player.Process(video.queue.data.level)</info>
+                            <lefttexture colordiffuse="PanelWhite30">osd/progress-end.png</lefttexture>
+                            <midtexture colordiffuse="PanelWhite30">osd/progress-end.png</midtexture>
+                        </control>
+                    </control>
+                    <control type="label">
+                        <label>[COLOR PanelWhite90]$LOCALIZE[292] $LOCALIZE[32008]:[/COLOR] $INFO[Player.Process(audio.queue.level)]% / $INFO[Player.Process(audio.queue.data.level)]%</label>
+                        <font>Mini</font>
+                        <textcolor>PanelWhite70</textcolor>
+                    </control>
+                    <control type="group">
+                        <height>50</height>
+                        <control type="progress">
+                            <description>Audio Queue BAR</description>
+                            <height>8</height>
+                            <bottom>21</bottom>
+                            <left>0</left>
+                            <width>275</width>
+                            <info>Player.Process(audio.queue.level)</info>
+                            <lefttexture colordiffuse="PanelWhite30">osd/progress-end.png</lefttexture>
+                            <midtexture colordiffuse="PanelWhite30">osd/progress-end.png</midtexture>
+                        </control>
+                    </control>
+                    <control type="group">
+                        <height>30</height>
+                        <control type="progress">
+                            <description>Audio Queue Data BAR</description>
+                            <height>8</height>
+                            <bottom>20</bottom>
+                            <left>295</left>
+                            <width>275</width>
+                            <info>Player.Process(audio.queue.data.level)</info>
+                            <lefttexture colordiffuse="PanelWhite30">osd/progress-end.png</lefttexture>
+                            <midtexture colordiffuse="PanelWhite30">osd/progress-end.png</midtexture>
+                        </control>
+                    </control>
+                </control>
+            </control>
+
         </control>
     </controls>
 </window>
