@@ -147,7 +147,7 @@
                     <width>760</width>
                     <itemgap>-31</itemgap>
 					<control type="label">
-						<label>[COLOR PanelWhite90]$LOCALIZE[21870]:[/COLOR] $INFO[Player.Process(video.source.hdr.type)]$VAR[DVInfoVar]</label>
+						<label>[COLOR PanelWhite90]$LOCALIZE[32010]:[/COLOR] $INFO[Player.Process(video.source.hdr.type)]$VAR[DVInfoVar]</label>
 						<font>Mini</font>
                         <textcolor>PanelWhite70</textcolor>
 					</control>
@@ -174,7 +174,7 @@
                         <visible>String.IsEqual(Player.Process(video.dovi.rpu.present),1)</visible>
                     </control>
                     <control type="label">
-                        <label>[COLOR PanelWhite90]$LOCALIZE[31279]:[/COLOR] [UPPERCASE]$INFO[Player.Process(videodecoder)][/UPPERCASE]$VAR[VideoDecoder, (,)]                        [COLOR PanelWhite90]$LOCALIZE[16020]:[/COLOR] [CAPITALIZE]$INFO[Player.Process(deintmethod)][/CAPITALIZE]</label>
+                        <label>[COLOR PanelWhite90]$LOCALIZE[32011]:[/COLOR] [UPPERCASE]$INFO[Player.Process(videodecoder)][/UPPERCASE]$VAR[VideoDecoder, (,)]                                 [COLOR PanelWhite90]$LOCALIZE[32012]:[/COLOR] [CAPITALIZE]$INFO[Player.Process(deintmethod)][/CAPITALIZE]</label>
                         <font>Mini</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>
@@ -255,7 +255,7 @@
                     <width>608</width>
                     <itemgap>-31</itemgap>
                     <control type="label">
-                        <label>[COLOR PanelWhite90]$LOCALIZE[21870]:[/COLOR] [CAPITALIZE]$INFO[VideoPlayer.audiolanguage][/CAPITALIZE], $VAR[AudioCodecVar]$VAR[AudioSubTypeVar] $VAR[AudioChannelsVar], $INFO[Player.Process(audio.sample.rate)] KHz, $INFO[VideoPlayer.AudioBitrate] Kb/s</label>
+                        <label>[COLOR PanelWhite90]$LOCALIZE[32010]:[/COLOR] [CAPITALIZE]$INFO[VideoPlayer.audiolanguage][/CAPITALIZE], $VAR[AudioCodecVar]$VAR[AudioSubTypeVar] $VAR[AudioChannelsVar], $INFO[Player.Process(audio.sample.rate)] KHz, $INFO[VideoPlayer.AudioBitrate] Kb/s</label>
                         <font>Mini</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>
@@ -270,7 +270,7 @@
                         <textcolor>PanelWhite70</textcolor>
                     </control>
 					<control type="label">
-						<label>[COLOR PanelWhite90]$LOCALIZE[462]:[/COLOR] $INFO[VideoPlayer.subtitleslangex] $INFO[VideoPlayer.subtitlesname]</label>
+						<label>[COLOR PanelWhite90]$LOCALIZE[32013]:[/COLOR] $INFO[VideoPlayer.subtitleslangex] $INFO[VideoPlayer.subtitlesname]</label>
 						<font>Mini</font>
                         <textcolor>PanelWhite70</textcolor>
                         <visible>VideoPlayer.HasSubtitles + VideoPlayer.SubtitlesEnabled</visible>
@@ -331,7 +331,7 @@
                         <textcolor>PanelWhite70</textcolor>
 					</control>
                     <control type="label">
-                        <label>[COLOR PanelWhite90]$LOCALIZE[157] $LOCALIZE[32008]:[/COLOR] $INFO[Player.Process(video.queue.level)]% / $INFO[Player.Process(video.queue.data.level)]%</label>
+                        <label>[COLOR PanelWhite90]$LOCALIZE[32014] $LOCALIZE[32008]:[/COLOR] $INFO[Player.Process(video.queue.level)]% / $INFO[Player.Process(video.queue.data.level)]%</label>
                         <font>Mini</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>
@@ -362,7 +362,7 @@
                         </control>
                     </control>
                     <control type="label">
-                        <label>[COLOR PanelWhite90]$LOCALIZE[292] $LOCALIZE[32008]:[/COLOR] $INFO[Player.Process(audio.queue.level)]% / $INFO[Player.Process(audio.queue.data.level)]%</label>
+                        <label>[COLOR PanelWhite90]$LOCALIZE[32015] $LOCALIZE[32008]:[/COLOR] $INFO[Player.Process(audio.queue.level)]% / $INFO[Player.Process(audio.queue.data.level)]%</label>
                         <font>Mini</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>
@@ -393,7 +393,7 @@
                         </control>
                     </control>
                     <control type="label">
-                        <label>[COLOR PanelWhite90]$LOCALIZE[140][/COLOR] $INFO[System.CpuFrequency] / $INFO[System.CPUTemperature]      $INFO[System.cpualtusage]</label>
+                        <label>[COLOR PanelWhite90]$LOCALIZE[32016]:[/COLOR] $INFO[System.CpuFrequency] / $INFO[System.CPUTemperature]      $INFO[System.cpualtusage]</label>
                         <font>Mini</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>
@@ -429,7 +429,7 @@
                         </control>
                     </control>
                     <control type="label">
-                        <label>[COLOR PanelWhite90]$LOCALIZE[31291]:[/COLOR] $INFO[Player.CacheLevel,,%]</label>
+                        <label>[COLOR PanelWhite90]$LOCALIZE[32017]:[/COLOR] $INFO[Player.CacheLevel,,%]</label>
                         <font>Mini</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>
@@ -472,7 +472,7 @@
                         <textcolor>PanelWhite70</textcolor>
 					</control>
                     <control type="label">
-                        <label>[COLOR PanelWhite90]$LOCALIZE[157] $LOCALIZE[32008]:[/COLOR] $INFO[Player.Process(video.queue.level)]% / $INFO[Player.Process(video.queue.data.level)]%</label>
+                        <label>[COLOR PanelWhite90]$LOCALIZE[32014] $LOCALIZE[32008]:[/COLOR] $INFO[Player.Process(video.queue.level)]% / $INFO[Player.Process(video.queue.data.level)]%</label>
                         <font>Mini</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>
@@ -503,7 +503,7 @@
                         </control>
                     </control>
                     <control type="label">
-                        <label>[COLOR PanelWhite90]$LOCALIZE[292] $LOCALIZE[32008]:[/COLOR] $INFO[Player.Process(audio.queue.level)]% / $INFO[Player.Process(audio.queue.data.level)]%</label>
+                        <label>[COLOR PanelWhite90]$LOCALIZE[32015] $LOCALIZE[32008]:[/COLOR] $INFO[Player.Process(audio.queue.level)]% / $INFO[Player.Process(audio.queue.data.level)]%</label>
                         <font>Mini</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>

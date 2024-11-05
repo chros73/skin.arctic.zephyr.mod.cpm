@@ -2656,3 +2656,36 @@ msgstr ""
 msgctxt "#32009"
 msgid "Conversion"
 msgstr ""
+
+msgctxt "#32010"
+msgid "Source"
+msgstr ""
+
+msgctxt "#32011"
+msgid "Decoder"
+msgstr ""
+
+msgctxt "#32012"
+msgid "Deinterlace"
+msgstr ""
+
+msgctxt "#32013"
+msgid "Subtitle"
+msgstr ""
+
+msgctxt "#32014"
+msgid "Video"
+msgstr ""
+
+msgctxt "#32015"
+msgid "Audio"
+msgstr ""
+
+msgctxt "#32016"
+msgid "CPU"
+msgstr ""
+
+msgctxt "#32017"
+msgid "Player-Cache"
+msgstr ""
+
