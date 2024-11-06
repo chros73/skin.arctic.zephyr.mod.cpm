@@ -7,10 +7,12 @@ Some additional icons from metroicon.net courtesy of Piers
 ## Arctic Zephyr Reloaded for CPM builds
 
 Modified version of [beatmasterRS's skin](https://github.com/beatmasterRS/skin.arctic.zephyr.mod) for [CoreELEC CPM builds](https://github.com/cpm-code/xbmc).
-- modified PlayerProcessInfo screen
-- added button to trigger PlayerProcessInfo
-- added button to trigger PlayerDebug
+- modify PlayerProcessInfo window
+- add button to OSD to trigger PlayerProcessInfo
+- add button to OSD to trigger PlayerDebug
 - hide OSD during pause by a remote control when "Hide play/pause info" is enabled in settings
+- enable seeking with arrow buttons and show Seekbar and OSD Info when PlayerProcessInfo window is active
+- add compact view of PlayerProcessInfo window (toggled by middle button) to only display dynamic info
 
 ### Recommended skin settings to hide OSD during pausing, in Video/Music OSD
 
