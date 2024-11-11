@@ -126,13 +126,13 @@
                 <top>-10</top>
                 <width>760</width>
                 <include content="DefCustomHeight" condition="String.IsEqual(Player.Process(video.dovi.rpu.present),1) + [String.Contains(Player.Process(video.source.hdr.type),HDR) | String.IsEqual(Player.Process(video.dovi.bl.signal.compatibility),1) | String.IsEqual(Player.Process(video.dovi.bl.signal.compatibility),6)]">
-                    <param name="height" value="338" />
+                    <param name="height" value="372" />
                 </include>
                 <include content="DefCustomHeight" condition="String.IsEqual(Player.Process(video.dovi.rpu.present),1) + [!String.Contains(Player.Process(video.source.hdr.type),HDR) + !String.IsEqual(Player.Process(video.dovi.bl.signal.compatibility),1) + !String.IsEqual(Player.Process(video.dovi.bl.signal.compatibility),6)]">
                     <param name="height" value="302" />
                 </include>
                 <include content="DefCustomHeight" condition="String.IsEqual(Player.Process(video.dovi.rpu.present),0) + String.Contains(Player.Process(video.source.hdr.type),HDR)">
-                    <param name="height" value="266" />
+                    <param name="height" value="302" />
                 </include>
                 <include content="DefCustomHeight" condition="String.IsEqual(Player.Process(video.dovi.rpu.present),0) + !String.Contains(Player.Process(video.source.hdr.type),HDR) + !String.IsEqual(Player.Process(video.dovi.bl.signal.compatibility),1) + !String.IsEqual(Player.Process(video.dovi.bl.signal.compatibility),6)">
                     <param name="height" value="230" />
@@ -157,12 +157,29 @@
                         <textcolor>PanelWhite70</textcolor>
                     </control>
                     <control type="label">
-                        <label>              $VAR[VideoColorSpaceVar] $LOCALIZE[20182], $VAR[VideoColorPrimariesVar] $LOCALIZE[36570], $VAR[VideoColorTransferVar] $LOCALIZE[32000], $VAR[VideoColorRangeVar] $LOCALIZE[32004]</label>
+                        <label>              $VAR[VideoColorSpaceVar] $LOCALIZE[32018], $VAR[VideoColorPrimariesVar] $LOCALIZE[32019], $VAR[VideoColorTransferVar] $LOCALIZE[32000], $VAR[VideoColorRangeVar] $LOCALIZE[32004]</label>
                         <font>Mini</font>
                         <textcolor>PanelWhite70</textcolor>
                     </control>
                     <control type="label">
                         <label>              [COLOR PanelWhite90]HDR10:[/COLOR]</label>
+                        <font>Mini</font>
+                        <textcolor>PanelWhite70</textcolor>
+                        <visible>String.Contains(Player.Process(video.source.hdr.type),HDR) | String.IsEqual(Player.Process(video.dovi.bl.signal.compatibility),1) | String.IsEqual(Player.Process(video.dovi.bl.signal.compatibility),6)</visible>
+                    </control>
+                    <control type="group">
+                        <height>31</height>
+                        <control type="label">
+                            <bottom>0</bottom>
+                            <left>180</left>
+                            <label>[COLOR PanelWhite90]MDP[/COLOR] $INFO[Player.Process(video.hdr.colour.primaries)]</label>
+                            <font>Mini</font>
+                            <textcolor>PanelWhite70</textcolor>
+                            <visible>String.Contains(Player.Process(video.source.hdr.type),HDR) | String.IsEqual(Player.Process(video.dovi.bl.signal.compatibility),1) | String.IsEqual(Player.Process(video.dovi.bl.signal.compatibility),6)</visible>
+                        </control>
+                    </control>
+                    <control type="label">
+                        <label> </label>
                         <font>Mini</font>
                         <textcolor>PanelWhite70</textcolor>
                         <visible>String.Contains(Player.Process(video.source.hdr.type),HDR) | String.IsEqual(Player.Process(video.dovi.bl.signal.compatibility),1) | String.IsEqual(Player.Process(video.dovi.bl.signal.compatibility),6)</visible>

@@ -2689,3 +2689,11 @@ msgctxt "#32017"
 msgid "Player-Cache"
 msgstr ""
 
+msgctxt "#32018"
+msgid "Space"
+msgstr ""
+
+msgctxt "#32019"
+msgid "Primaries"
+msgstr ""
+
