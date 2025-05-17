@@ -2081,8 +2081,9 @@
 	</variable>
 
 	<variable name="AudioSubTypeVar">
-		<value condition="!String.IsEmpty(Player.Process(audio.dts.x.type))"> [COLOR PanelWhite80][B][$INFO[Player.Process(audio.dts.x.type)]][/B][/COLOR]</value>
-		<value condition="!String.IsEmpty(Player.Process(audio.is.dolby.atmos))"> [COLOR PanelWhite80][B][$INFO[Player.Process(audio.is.dolby.atmos)]][/B][/COLOR]</value>
+        <value condition="String.IsEqual(VideoPlayer.AudioCodec,truehd_atmos) | String.IsEqual(VideoPlayer.AudioCodec,eac3_ddp_atmos)"> [COLOR PanelWhite80][B]Atmos[/B][/COLOR]</value>
+		<value condition="String.IsEqual(VideoPlayer.AudioCodec,dtshd_ma_x)"> [COLOR PanelWhite80][B]DTS:X[/B][/COLOR]</value>
+		<value condition="String.IsEqual(VideoPlayer.AudioCodec,dtshd_ma_x_imax)"> [COLOR PanelWhite80][B]IMAX[/B][/COLOR]</value>
 		<value></value>
 	</variable>
 
