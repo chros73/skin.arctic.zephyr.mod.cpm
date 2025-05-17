@@ -1,3 +1,9 @@
+[B]3.9.12[/B]
+Merge upstream changes
+Update PlayerProcessInfo for vA14:
+- add L5 offset of DoVi RPU to full view
+- modify object audio detection logic
+
 [B]3.9.11[/B]
 Update PlayerProcessInfo for vA9:
 - add Mastering Display Primaries of HDR10 content to full view
