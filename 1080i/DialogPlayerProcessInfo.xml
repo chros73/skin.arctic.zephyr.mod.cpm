@@ -126,10 +126,10 @@
                 <top>-10</top>
                 <width>760</width>
                 <include content="DefCustomHeight" condition="String.IsEqual(Player.Process(video.dovi.rpu.present),1) + [String.Contains(Player.Process(video.source.hdr.type),HDR) | String.IsEqual(Player.Process(video.dovi.bl.signal.compatibility),1) | String.IsEqual(Player.Process(video.dovi.bl.signal.compatibility),6)]">
-                    <param name="height" value="372" />
+                    <param name="height" value="408" />
                 </include>
                 <include content="DefCustomHeight" condition="String.IsEqual(Player.Process(video.dovi.rpu.present),1) + [!String.Contains(Player.Process(video.source.hdr.type),HDR) + !String.IsEqual(Player.Process(video.dovi.bl.signal.compatibility),1) + !String.IsEqual(Player.Process(video.dovi.bl.signal.compatibility),6)]">
-                    <param name="height" value="302" />
+                    <param name="height" value="338" />
                 </include>
                 <include content="DefCustomHeight" condition="String.IsEqual(Player.Process(video.dovi.rpu.present),0) + String.Contains(Player.Process(video.source.hdr.type),HDR)">
                     <param name="height" value="302" />
@@ -229,6 +229,23 @@
                             <bottom>0</bottom>
                             <left>400</left>
                             <label>[COLOR PanelWhite90]maxCLL/FALL[/COLOR] $INFO[Player.Process(video.dovi.l6.max.cll)]/$INFO[Player.Process(video.dovi.l6.max.fall)]  nits</label>
+                            <font>Mini</font>
+                            <textcolor>PanelWhite70</textcolor>
+                            <visible>String.IsEqual(Player.Process(video.dovi.rpu.present),1)</visible>
+                        </control>
+                    </control>
+                    <control type="label">
+                        <label> </label>
+                        <font>Mini</font>
+                        <textcolor>PanelWhite70</textcolor>
+                        <visible>String.IsEqual(Player.Process(video.dovi.rpu.present),1)</visible>
+                    </control>
+                    <control type="group">
+                        <height>31</height>
+                        <control type="label">
+                            <bottom>0</bottom>
+                            <left>180</left>
+                            <label>[COLOR PanelWhite90]L5[/COLOR]     $INFO[Player.Process(video.dovi.l5.left.offset)]  $INFO[Player.Process(video.dovi.l5.right.offset)]  $INFO[Player.Process(video.dovi.l5.top.offset)]  $INFO[Player.Process(video.dovi.l5.bottom.offset)]  px</label>
                             <font>Mini</font>
                             <textcolor>PanelWhite70</textcolor>
                             <visible>String.IsEqual(Player.Process(video.dovi.rpu.present),1)</visible>
